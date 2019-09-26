@@ -14,3 +14,9 @@ if [ $? = 0 ]; then
 fi;
 config checkout
 config config status.showUntrackedFiles no
+
+mkdir -p .suckless && cd .suckless
+
+git clone https://github.com/lzygmanski/dwm.git
+cd dwm 
+make clean install
