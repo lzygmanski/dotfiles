@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "Linking"
+echo "Linking Started"
 files=(
 	".vimrc"
 	".xinitrc"
@@ -8,17 +8,18 @@ files=(
 	".config/compton.conf"
 )
 
-backup=$HOME/.dotfilebackup
+backup=$HOME/.dotfiles-backup
+rm -R $backup
 mkdir -p $backup
  
 for file in "${files[@]}"
 do
 	filepath="$HOME/$file"
-	if [ ! -f "$filepath" ]; then
-		echo "$filepath exist (backing up)"
-		mv $filepath $backup
+	if [ -f "$filepath" ]; then
+		# TODO Handle backup
 		rm $filepath
 	fi
 	ln -s $HOME/.dotfiles/$file $filepath
 	echo "$filepath cerated!"
-done 
+done
+echo "Linkig Finished"

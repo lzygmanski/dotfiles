@@ -1,8 +1,9 @@
 #!/bin/sh
 
-pacman -Syu vim \n
-gvim \n
-zsh \n
-git \n 
-autocutsel \n
-compton \n
+sudo pacman -Syu --noconfirm \
+	gvim \
+	zsh \
+ 	git \
+	autocutsel \
+	compton
+
