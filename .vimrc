@@ -1,2 +1,5 @@
+syntax on
+
 set number
+
 
