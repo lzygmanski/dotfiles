@@ -1,6 +1,12 @@
 #!/bin/sh
 
-pacman -Syu vim gvim zsh git autocutsel
+pacman -Syu vim \n
+gvim \n
+zsh \n
+git \n 
+autocutsel \n
+compton \n
+
 usermod -s /bin/zsh $USER
 
 git clone --bare https://github.com/lzygmanski/dotfiles.git  $HOME/.dotfiles
