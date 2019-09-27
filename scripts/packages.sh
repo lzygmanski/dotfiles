@@ -5,5 +5,6 @@ sudo pacman -Syu --noconfirm \
 	zsh \
  	git \
 	autocutsel \
-	compton
+	compton \
+	feh
 

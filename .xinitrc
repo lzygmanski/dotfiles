@@ -2,8 +2,12 @@
 
 [ -f "$HOME/.xprofile" ] && . ~/.xprofile
 
-exec dwm
-exec compton -b -d --config ~/.config/.compton.conf
+
+compton -b --config ~/.config/compton.conf
+feh --bg-fill --randomize ~/wallpapers/* &
 
 autocutsel -fork &
 autocutsel -selection PRIMARY --fork &
+
+
+exec dwm
