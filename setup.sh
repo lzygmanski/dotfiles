@@ -1,5 +1,8 @@
 #!/bin/sh
 
+pacman -Syu vim gvim zsh git autocutsel
+usermod -s /bin/zsh $USER
+
 git clone --bare https://github.com/lzygmanski/dotfiles.git  $HOME/.dotfiles
 function config {
    /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
@@ -14,6 +17,7 @@ if [ $? = 0 ]; then
 fi;
 config checkout
 config config status.showUntrackedFiles no
+
 
 mkdir -p .suckless && cd .suckless
 
