@@ -11,6 +11,6 @@ sh $scripts/suckless.sh
 echo "Link dotfiles"
 sh $scripts/linkconfig.sh
 
-echo "Set zsh as default shell"
-usermod -s /bin/zsh $USER
+echo "Create Dev directory"
+mkdir $HOME/Dev
 
