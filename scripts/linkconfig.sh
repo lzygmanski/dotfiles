@@ -5,6 +5,7 @@ files=(
 	".vimrc"
 	".xinitrc"
 	".zshrc"
+	".bashrc"
 	".config/compton.conf"
 )
 
