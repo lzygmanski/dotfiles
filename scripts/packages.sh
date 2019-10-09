@@ -7,8 +7,9 @@ sudo pacman -Syu --noconfirm \
 	ruby \
 	autocutsel \
 	compton \
-	feh
-
+	feh \
+	texlive-most \
+	texlive-lang
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

@@ -1,4 +1,5 @@
 syntax on
+filetype plugin indent on
 
 set syntax=whitespace
 set number
@@ -17,6 +18,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'terryma/vim-multiple-cursors'
   Plug 'alvan/vim-closetag'
   Plug 'mattn/emmet-vim'
+  Plug 'ying17zi/vim-live-latex-preview'
 call plug#end()
 " --- plugins end ---
 
