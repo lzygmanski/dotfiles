@@ -13,6 +13,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
   Plug 'scrooloose/syntastic'
+  Plug 'terryma/vim-multiple-cursors'
+  Plug 'alvan/vim-closetag'
+  Plug 'mattn/emmet-vim'
 call plug#end()
 " --- plugins end ---
 
