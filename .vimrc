@@ -18,9 +18,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'terryma/vim-multiple-cursors'
   Plug 'alvan/vim-closetag'
   Plug 'mattn/emmet-vim'
-  Plug 'ying17zi/vim-live-latex-preview'
+  Plug 'lervag/vimtex'
+  Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 call plug#end()
 " --- plugins end ---
+
+" --- LaTeX begin ---
+let g:livepreview_previewer = 'zathura'
+" --- LaTeX end ---
 
 " --- cursor begin ---
 let &t_SI = "\e[6 q"
@@ -59,5 +64,6 @@ augroup ProjectDrawer
   autocmd!
   autocmd VimEnter * :Vexplore
   autocmd VimEnter * silent !echo -ne "\e[2 q"
+  autocmd Filetype tex setl updatetime=1
 augroup END
 " --- autocmd end ---
