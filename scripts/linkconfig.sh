@@ -7,6 +7,7 @@ files=(
 	".zshrc"
 	".bashrc"
 	".config/compton.conf"
+	".config/nvim/nvim.init"
 )
 
 backup=$HOME/.dotfiles-backup
