@@ -6,8 +6,9 @@ files=(
 	".xinitrc"
 	".zshrc"
 	".bashrc"
+	".tmux.conf"
 	".config/compton.conf"
-	".config/nvim/nvim.init"
+	".config/nvim/init.vim"
 )
 
 backup=$HOME/.dotfiles-backup
