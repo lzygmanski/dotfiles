@@ -9,5 +9,4 @@ feh --bg-fill --randomize ~/wallpapers/* &
 autocutsel -fork &
 autocutsel -selection PRIMARY --fork &
 
-
-exec dwm
+exec bspwm 
