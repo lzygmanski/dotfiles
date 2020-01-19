@@ -2,9 +2,10 @@
 
 [ -f "$HOME/.xprofile" ] && . ~/.xprofile
 
-
 compton -b --config ~/.config/compton.conf
 feh --bg-fill --randomize ~/wallpapers/* &
 
 autocutsel -fork &
 autocutsel -selection PRIMARY --fork &
+
+exec bspwm 

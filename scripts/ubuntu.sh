@@ -24,14 +24,5 @@ sudo apt-get install \
 ## Source
 sh $MY_DIR/source.sh
 
-## Links
-cd $MY_DIR/..
-stow -v -R -t $HOME \
-	bspwm \
-	compton \
-	neovim \
-	sxhkd \
-	tmux \
-	vim \
-	xorg \
-	feh
+## Link
+sh $MY_DIR/link.sh
