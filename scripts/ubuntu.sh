@@ -12,6 +12,8 @@ sudo apt-get install \
 
 ## Standard
 sudo apt-get install \
+	python3-pip
+	imagemagick \
 	neovim \
 	vim \
 	tmux \
@@ -20,6 +22,9 @@ sudo apt-get install \
 	compton \
 	feh \
 	stow
+
+## Pywall
+sudo pip3 install pywal
 
 ## Source
 sh $MY_DIR/source.sh
