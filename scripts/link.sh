@@ -8,6 +8,7 @@ stow -v -R -t $HOME \
 	bspwm \
 	compton \
 	neovim \
+	polybar \
 	sxhkd \
 	tmux \
 	vim \
