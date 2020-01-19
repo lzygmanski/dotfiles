@@ -43,6 +43,7 @@ sudo apt install \
 
 ## Standard
 sudo apt-get install \
+	rxvt-unicode-256color \
 	vim \
 	vim-gtk \
 	neovim \
