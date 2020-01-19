@@ -38,7 +38,8 @@ sudo apt install \
 	python-xcbgen \
 	imagemagick \
  	xcb-proto \
-	clang-7.0
+	clang-7.0 \
+	universal-ctags
 
 ## Standard
 sudo apt-get install \

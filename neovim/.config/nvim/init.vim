@@ -33,12 +33,18 @@ command! MakeTags !ctags -R .
 """ FILE MANAGER: NETRW ---
 
 " Documentation for mapping in |netrw-browse-maps|
+" https://shapeshed.com/vim-netrw/
 
 let g:netrw_banner=0 " Disable banner
 let g:netrw_browse_split=4 " Open in window
 let g:netrw_altv=1 " Open split to the right
 let g:netrw_liststyle=3 " Tree view
 let g:netrw_winsize=25 " Window size
+
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * :Vexplore
+augroup END
 
 """ PLUGINS ---
 
