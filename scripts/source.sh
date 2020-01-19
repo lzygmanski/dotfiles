@@ -1,12 +1,12 @@
 #!/bin/sh
 
-# BSPWM
+## BSPWM
 cd $HOME
 rm -Rf bspwm
 git clone https://github.com/baskerville/bspwm.git
 cd bspwm && make && sudo make install
 
-# SXHKD
+## SXHKD
 cd $HOME
 rm -rf sxhkd
 git clone https://github.com/baskerville/sxhkd.git

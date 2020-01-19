@@ -21,7 +21,7 @@ sudo apt-get install \
 	feh \
 	stow
 
-## From Source
+## Source
 sh $MY_DIR/source.sh
 
 ## Links
