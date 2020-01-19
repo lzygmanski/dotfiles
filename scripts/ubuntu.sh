@@ -48,7 +48,8 @@ sudo apt-get install \
 	autocutsel \
 	compton \
 	feh \
-	stow
+	stow \
+	ranger
 
 ## Pywall
 sudo pip3 install pywal
