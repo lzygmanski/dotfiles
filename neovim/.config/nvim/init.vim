@@ -6,7 +6,6 @@ set wildmenu " Display all matching files when we tab complete
 set number relativenumber " Show hybrid numbers
 set updatetime=100 " Change upddate time
 set mouse=a " Enable mouse for all mode
-set ttymouse=xterm2 " Fix mouse slpit resize
 
 """ SYNTAX START ---
 
