@@ -5,7 +5,8 @@ set path+=** " Search down into subfolders
 set wildmenu " Display all matching files when we tab complete
 set number relativenumber " Show hybrid numbers
 set updatetime=100 " Change upddate time
-set mouse=a " Enable mouse for all mode
+set clipboard=unnamed " Set global clipboard
+set mouse=n " Enable mouse for normal mode
 
 """ SYNTAX START ---
 

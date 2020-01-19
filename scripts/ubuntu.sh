@@ -42,8 +42,9 @@ sudo apt install \
 
 ## Standard
 sudo apt-get install \
-	neovim \
 	vim \
+	vim-gtk \
+	neovim \
 	tmux \
 	autocutsel \
 	compton \
