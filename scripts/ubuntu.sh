@@ -33,4 +33,5 @@ stow -v -R -t $HOME \
 	sxhkd \
 	tmux \
 	vim \
-	xorg
+	xorg \
+	feh
