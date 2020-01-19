@@ -1,7 +1,5 @@
 #!/bin/sh
 
-
-
 # BSPWM
 cd $HOME
 rm -Rf bspwm
