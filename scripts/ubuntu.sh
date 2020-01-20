@@ -44,6 +44,7 @@ sudo apt install \
 ## Standard
 sudo apt-get install \
 	rxvt-unicode-256color \
+	dunst \
 	vim \
 	vim-gtk \
 	neovim \
@@ -52,7 +53,8 @@ sudo apt-get install \
 	compton \
 	feh \
 	stow \
-	ranger
+	ranger \
+	nautilus
 
 ## Pywall
 sudo pip3 install pywal
