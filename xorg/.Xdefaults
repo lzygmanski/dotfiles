@@ -6,8 +6,6 @@ URxvt.scrollBar:	    flase
 
 !! Colours
 URxvt.cursorColor:	    magenta
-URxvt.bacground: 	    [90]#002b36
 
 !! Plugins
 URxvt.perl-ext-common:  default,background,matcher,font-size
-

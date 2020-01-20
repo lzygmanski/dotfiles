@@ -1,11 +1,6 @@
 #!/usr/bin/env sh
 
 [ -f "$HOME/.xprofile" ] && . ~/.xprofile
-
-compton -b --config ~/.config/compton.conf
-feh --bg-fill --randomize ~/wallpapers/* &
-
-autocutsel -fork &
-autocutsel -selection PRIMARY --fork &
+[ -f "$HOME/.xmain" ] && . ~/.xmain
 
 exec bspwm 

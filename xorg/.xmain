@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+compton -b --config ~/.config/compton.conf
+
+wal -a 96 -i ~/wallpapers/
+
+autocutsel -fork &
+autocutsel -selection PRIMARY --fork &
