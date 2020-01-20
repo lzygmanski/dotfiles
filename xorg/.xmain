@@ -2,7 +2,7 @@
 
 compton -b --config ~/.config/compton.conf
 
-wal -a 96 -i ~/wallpapers/
+wal -a 97 -i ~/wallpapers/
 
 autocutsel -fork &
 autocutsel -selection PRIMARY --fork &
