@@ -55,4 +55,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'airblade/vim-gitgutter'
 	Plug 'mattn/emmet-vim'
 	Plug 'lervag/vimtex'
+	Plug 'dylanaraps/wal.vim'
 call plug#end()
+
+colorscheme wal

@@ -25,8 +25,8 @@ line-color = #f00
 border-size = 2
 border-color = #00000000
 
-padding-left = 0
-padding-right = 2
+padding-left = 5
+padding-right = 5
 
 module-margin-left = 1
 module-margin-right = 2
@@ -35,9 +35,9 @@ font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
-modules-left = bspwm
-modules-center = 
-modules-right = pulseaudio memory cpu date
+modules-left = memory cpu
+modules-center = xwindow
+modules-right = pulseaudio date
 
 tray-position = right
 tray-padding = 2
@@ -52,6 +52,10 @@ scroll-down = bspwm-deskprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
 
 [module/bspwm]
 type = internal/bspwm
@@ -136,14 +140,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-;pseudo-transparency = false
 
 [global/wm]
 margin-top = 0
 margin-bottom = 0
-
-; vim:ft=dosini
