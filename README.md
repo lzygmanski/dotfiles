@@ -17,6 +17,7 @@ Pull the repository, and then create the symbolic links using [GNU stow](https:/
 * Notification: dunst
 * File manager: ranger, nautilus
 * Image viewer: feh
+* Screen capturing: scrot, shutter
 
 ## TO DO
 * font config

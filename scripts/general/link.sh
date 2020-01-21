@@ -3,7 +3,7 @@
 MY_DIR="$( cd "$(dirname "$0")" ; pwd -P )"
 
 ## Link
-cd $MY_DIR/..
+cd $MY_DIR/../..
 stow -v -R -t $HOME \
 	bspwm \
 	compton \
