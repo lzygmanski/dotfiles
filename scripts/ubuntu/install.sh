@@ -45,6 +45,7 @@ sudo apt install \
 ## install standard tools
 sudo apt-get install \
 	rxvt-unicode-256color \
+	xbindkeys \
 	dunst \
 	vim \
 	vim-gtk \
