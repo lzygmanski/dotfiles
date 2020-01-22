@@ -44,8 +44,10 @@ sudo apt install \
 
 ## install standard tools
 sudo apt-get install \
+	dmenu \
 	rxvt-unicode-256color \
 	xbindkeys \
+	arandr \
 	dunst \
 	vim \
 	vim-gtk \
