@@ -48,6 +48,7 @@ sudo apt-get install \
 	rxvt-unicode-256color \
 	xbindkeys \
 	arandr \
+	pavucontrol \
 	dunst \
 	vim \
 	vim-gtk \
@@ -61,3 +62,12 @@ sudo apt-get install \
 	nautilus \
 	scrot \
 	shutter
+
+## SNAP install
+sudo snap install --classic code
+sudo snap install --classic slack
+
+## install from .deb
+### Chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
