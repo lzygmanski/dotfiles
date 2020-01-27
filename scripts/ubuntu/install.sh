@@ -4,7 +4,7 @@
 sudo add-apt-repository ppa:linuxuprising/shutter
 
 ## Install libraries
-sudo apt-get install \
+sudo apt-get install -y \
 	libxcb-xinerama0-dev \
 	libxcb-icccm4-dev \
 	libxcb-randr0-dev \
@@ -30,7 +30,7 @@ sudo apt-get install \
 	libxft-dev
 
 ## Install dev tools
-sudo apt install \
+sudo apt install -y \
 	build-essential \
 	git \
 	cmake \
@@ -46,7 +46,7 @@ sudo apt install \
 	universal-ctags
 
 ## install standard tools
-sudo apt-get install \
+sudo apt-get install -y \
 	dmenu \
 	rxvt-unicode-256color \
 	xbindkeys \
@@ -70,15 +70,11 @@ sudo apt-get install \
 sudo snap install --classic code
 sudo snap install --classic slack
 
-## install from .deb
-### Chrome
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-stable_current_amd64.deb
+## Nodejs
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
 
-## Other
-### Brave install
-sudo apt install apt-transport-https curl
-curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
-echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo apt update
-sudo apt install brave-browser
+## Yarn
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update && sudo apt install -y yarn
