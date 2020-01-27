@@ -22,4 +22,5 @@ cd polybar && sudo ./build.sh
 cd $HOME
 sudo rm -rf dmenu
 git clone https://github.com/lzygmanski/dmenu
+git remote add suckless https://git.suckless.org/dmenu
 cd dmenu && make && sudo make install
