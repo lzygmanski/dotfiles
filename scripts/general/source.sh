@@ -17,3 +17,9 @@ cd $HOME
 sudo rm -rf polybar
 git clone --recursive https://github.com/polybar/polybar
 cd polybar && sudo ./build.sh
+
+## dmenu
+cd $HOME
+sudo rm -rf dmenu
+git clone https://github.com/lzygmanski/dmenu
+cd dmenu && make && sudo make install

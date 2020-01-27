@@ -13,4 +13,5 @@ stow -v -R -t $HOME \
 	tmux \
 	vim \
 	xorg \
-	feh
+	wallpapers \
+	bin

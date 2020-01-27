@@ -24,7 +24,10 @@ sudo apt-get install \
 	libjsoncpp-dev \
 	libmpdclient-dev \
 	libcurl4-openssl-dev \
-	libnl-genl-3-dev 
+	libnl-genl-3-dev \
+	libx11-dev \
+	libxinerama-dev \
+	libxft-dev
 
 ## Install dev tools
 sudo apt install \
