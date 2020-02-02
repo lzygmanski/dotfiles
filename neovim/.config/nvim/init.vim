@@ -41,11 +41,6 @@ let g:netrw_altv=1 " Open split to the right
 let g:netrw_liststyle=3 " Tree view
 let g:netrw_winsize=25 " Window size
 
-augroup ProjectDrawer
-  autocmd!
-  autocmd VimEnter * :Vexplore
-augroup END
-
 """ PLUGINS ---
 
 call plug#begin('~/.config/nvim/plugged')
