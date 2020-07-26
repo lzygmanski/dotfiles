@@ -50,7 +50,18 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'airblade/vim-gitgutter'
 	Plug 'mattn/emmet-vim'
 	Plug 'lervag/vimtex'
-	Plug 'dylanaraps/wal.vim'
+	Plug 'morhetz/gruvbox'
 call plug#end()
 
-colorscheme wal
+colorscheme gruvbox
+set background=dark
+
+""" KEY MAPS ---
+
+nnoremap <SPACE> <Nop>
+
+let mapleader=" "
+
+nmap <leader>gj :diffget //3<CR>
+nmap <leader>gf :diffget //2<CR>
+nmap <leader>gs :G<CR>
