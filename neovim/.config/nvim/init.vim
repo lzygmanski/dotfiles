@@ -50,6 +50,9 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'airblade/vim-gitgutter'
 	Plug 'mattn/emmet-vim'
 	Plug 'lervag/vimtex'
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+	Plug 'junegunn/fzf.vim'
+	Plug 'neoclide/coc.nvim'
 	Plug 'morhetz/gruvbox'
 call plug#end()
 
@@ -59,9 +62,16 @@ set background=dark
 """ KEY MAPS ---
 
 nnoremap <SPACE> <Nop>
+nnoremap <C-p> :GFiles<CR>
 
 let mapleader=" "
 
+""" git
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
 nmap <leader>gs :G<CR>
+
+""" fzf
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
+
