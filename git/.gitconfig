@@ -4,3 +4,6 @@
 	tool = vimdiff
 [difftool]
 	prompt = false
+[user]
+	name = Lukasz Zygmanski
+	email = lzygmanski@gmail.com
