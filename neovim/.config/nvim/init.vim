@@ -58,6 +58,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'junegunn/fzf.vim'
 	Plug 'neoclide/coc.nvim'
 	Plug 'morhetz/gruvbox'
+	Plug 'posva/vim-vue'
 call plug#end()
 
 colorscheme gruvbox
