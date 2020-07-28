@@ -1,41 +1,24 @@
 """ BASIC SETUP ---
 
-set nocompatible " Not compatible with vi
-set path+=** " Search down into subfolders
-set wildmenu " Display all matching files when we tab complete
-set number relativenumber " Show hybrid numbers
-set updatetime=100 " Change upddate time
-set clipboard=unnamed " Set global clipboard
-set mouse=n " Enable mouse for normal mode
-
+set nocompatible
+set path+=**
+set wildmenu
+set number relativenumber
+set updatetime=50
+set clipboard=unnamed
+set mouse=n
+set nowrap
 set cmdheight=2
 set shortmess+=c
-
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
+set nobackup
 
 """ SYNTAX START ---
 
 syntax enable
 filetype plugin on
-
-""" CTAGS ---
-
-command! MakeTags !ctags -R .
-" - Use ^] to jump to tag under cursor
-" - Use g^] for ambiguous tags
-" - Use ^t to jump back up the tag stack
-
-""" AUTOCOMPLETE ---
-
-" Documentation in |ins-completion|
-" USAGE:
-" - ^x^n for just this file
-" - ^x^f for filenames
-" - ^x^] for tags only
-" - ^n for anything specified by the 'coplete' option
-" - ^n and ^p to go forth and back in suggestion list
 
 """ FILE MANAGER: NETRW ---
 
