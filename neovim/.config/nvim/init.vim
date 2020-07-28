@@ -4,7 +4,7 @@ set nocompatible
 set path+=**
 set wildmenu
 set number relativenumber
-set updatetime=50
+set updatetime=100
 set clipboard=unnamed
 set mouse=n
 set nowrap
@@ -58,7 +58,6 @@ nnoremap <SPACE> <Nop>
 let mapleader=" "
 
 """ basic
-nnoremap <C-p> :GFiles<CR>
 nnoremap <Leader>+ :vertical resize +5<CR>
 nnoremap <Leader>- :vertical resize -5<CR>
 
@@ -110,4 +109,12 @@ nmap <leader>rn <Plug>(coc-rename)
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+
+""" explorer
+nmap <leader>e :CocCommand explorer<CR>
+nmap <leader>f :CocCommand explorer --position floating<CR>
+
+""" fzf
+nnoremap <C-p> :CocCommand fzf-preview.GitFiles<CR>
+nnoremap <leader>ls :CocCommand fzf-preview.AllBuffers<CR>
 

@@ -1,3 +1,9 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": ["css", "markdown"]
+    "coc.preferences.formatOnSaveFiletypes": ["css", "markdown"],
+    "explorer.width": 30,
+    "explorer.previewAction.onHover": false,
+    "explorer.keyMappings": {
+        "<cr>": ["expandable?", "expand", "open"],
+        "v": "open:vsplit"
+    }
 }
