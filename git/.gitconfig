@@ -7,3 +7,5 @@
 [user]
 	name = Lukasz Zygmanski
 	email = lzygmanski@gmail.com
+[pull]
+	rebase = true
