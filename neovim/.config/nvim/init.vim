@@ -47,7 +47,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'posva/vim-vue'
 call plug#end()
 
-""" THEME --- 
+""" THEME ---
 
 colorscheme gruvbox
 set background=dark
@@ -102,8 +102,12 @@ nmap <silent> gr <Plug>(coc-references)
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Symbol renaming.
+" CocRestart
+nnoremap <leader>cr :CocRestart
+
+" renaming.
 nmap <leader>rn <Plug>(coc-rename)
+nnoremap <leader>prn :CocSearch <C-R>=expand("<cword>")
 
 """ prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -118,3 +122,19 @@ nmap <leader>f :CocCommand explorer --position floating<CR>
 nnoremap <C-p> :CocCommand fzf-preview.GitFiles<CR>
 nnoremap <leader>ls :CocCommand fzf-preview.AllBuffers<CR>
 
+""" Rg
+nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
+
+""" Others... :)
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+augroup highlight_yank
+    autocmd!
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
+augroup END
+
+autocmd BufWritePre * :call TrimWhitespace()
