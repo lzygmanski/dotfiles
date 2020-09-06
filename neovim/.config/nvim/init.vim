@@ -44,6 +44,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'neoclide/coc.nvim'
 	Plug 'morhetz/gruvbox'
 	Plug 'posva/vim-vue'
+    Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
 """ THEME ---
