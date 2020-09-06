@@ -9,3 +9,5 @@
 	email = lzygmanski@gmail.com
 [pull]
 	rebase = true
+[core]
+	editor = vim
