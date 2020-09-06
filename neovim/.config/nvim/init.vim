@@ -134,16 +134,7 @@ nnoremap <leader>ls :CocCommand fzf-preview.AllBuffers<CR>
 """ Rg
 nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
 
-""" Others... :)
-fun! TrimWhitespace()
-    let l:save = winsaveview()
-    keeppatterns %s/\s\+$//e
-    call winrestview(l:save)
-endfun
-
 augroup highlight_yank
     autocmd!
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
 augroup END
-
-autocmd BufWritePre * :call TrimWhitespace()
