@@ -17,3 +17,12 @@ tags
 
 # packages
 *.deb
+
+##### Project specific #####
+
+# neovim
+neovim/.config/coc
+neovim/.config/configstore 
+
+# bin
+bin/.local/share
