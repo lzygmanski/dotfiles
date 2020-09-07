@@ -23,6 +23,7 @@ tags
 # neovim
 neovim/.config/coc
 neovim/.config/configstore 
+neovim/.config/oni2 
 
 # bin
 bin/.local/share

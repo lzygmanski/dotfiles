@@ -1,5 +1,6 @@
 """ BASIC SETUP ---
 
+set encoding=UTF-8
 set nocompatible
 set path+=**
 set wildmenu
@@ -44,6 +45,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'neoclide/coc.nvim'
 	Plug 'morhetz/gruvbox'
     Plug 'ThePrimeagen/vim-be-good'
+    Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 """ THEME ---
