@@ -47,6 +47,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'morhetz/gruvbox'
     Plug 'ThePrimeagen/vim-be-good'
     Plug 'ryanoasis/vim-devicons'
+    Plug 'jparise/vim-graphql'
 call plug#end()
 
 """ THEME ---
