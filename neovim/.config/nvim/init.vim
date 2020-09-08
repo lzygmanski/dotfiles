@@ -38,6 +38,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'editorconfig/editorconfig-vim'
 	Plug 'vim-airline/vim-airline'
 	Plug 'tpope/vim-fugitive'
+    Plug 'rbong/vim-flog'
 	Plug 'airblade/vim-gitgutter'
 	Plug 'mattn/emmet-vim'
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
