@@ -21,6 +21,8 @@ set nobackup
 syntax enable
 filetype plugin on
 
+set omnifunc=syntaxcomplete#Complete
+
 """ FILE MANAGER: NETRW ---
 
 " Documentation for mapping in |netrw-browse-maps|
