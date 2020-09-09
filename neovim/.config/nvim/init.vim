@@ -69,7 +69,6 @@ nnoremap <Leader>- :vertical resize -5<CR>
 """ git
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
-nmap <leader>gs :G<CR>
 
 """ coc
 " Use tab for trigger completion with characters ahead and navigate.
@@ -134,7 +133,9 @@ nmap <leader>f :CocCommand explorer --position floating<CR>
 
 """ fzf
 nnoremap <C-p> :CocCommand fzf-preview.GitFiles<CR>
+nnoremap <leader>p :CocCommand fzf-preview.ProjectFiles<CR>
 nnoremap <leader>ls :CocCommand fzf-preview.AllBuffers<CR>
+nnoremap <leader>gs :CocCommand fzf-preview.GitStatus<CR>
 
 """ Rg
 nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>

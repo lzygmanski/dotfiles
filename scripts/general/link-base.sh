@@ -9,4 +9,5 @@ stow -v -R -t $HOME \
 	neovim \
 	tmux \
 	vim \
+    oh-my-zsh \
 	bin
