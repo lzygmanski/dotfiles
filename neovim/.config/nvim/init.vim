@@ -133,7 +133,7 @@ nmap <leader>f :CocCommand explorer --position floating<CR>
 
 """ fzf
 nnoremap <C-p> :CocCommand fzf-preview.GitFiles<CR>
-nnoremap <leader>p :CocCommand fzf-preview.ProjectFiles<CR>
+nnoremap <leader>p :CocCommand fzf-preview.DirectoryFiles<CR>
 nnoremap <leader>ls :CocCommand fzf-preview.AllBuffers<CR>
 nnoremap <leader>gs :CocCommand fzf-preview.GitStatus<CR>
 
