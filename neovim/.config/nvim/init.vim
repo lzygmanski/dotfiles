@@ -37,20 +37,46 @@ let g:netrw_winsize=25 " Window size
 """ PLUGINS ---
 
 call plug#begin('~/.config/nvim/plugged')
+    " General
 	Plug 'editorconfig/editorconfig-vim'
 	Plug 'vim-airline/vim-airline'
-	Plug 'tpope/vim-fugitive'
-    Plug 'rbong/vim-flog'
-	Plug 'airblade/vim-gitgutter'
-	Plug 'mattn/emmet-vim'
-	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
-	Plug 'neoclide/coc.nvim'
-	Plug 'morhetz/gruvbox'
-    Plug 'ThePrimeagen/vim-be-good'
+
+    " Git support
+	Plug 'tpope/vim-fugitive'
+	Plug 'airblade/vim-gitgutter'
+    Plug 'rbong/vim-flog'
+
+    " Styles
+    Plug 'morhetz/gruvbox'
     Plug 'ryanoasis/vim-devicons'
-    Plug 'jparise/vim-graphql'
+    
+    " Coc and coc plugins plugins
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+    " Syntax support
+    Plug 'pangloss/vim-javascript'    " JavaScript support
+    Plug 'leafgarland/typescript-vim' " TypeScript syntax
+    Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
+    Plug 'jparise/vim-graphql'        " GraphQL syntax
+
+    " Others
+    Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
+
+" coc plugins
+let g:coc_global_extensions = [
+    \ 'coc-tsserver',
+    \ 'coc-json',
+    \ 'coc-html',
+    \ 'coc-css',
+    \ 'coc-emmet',
+    \ 'coc-tslint',
+    \ 'coc-prettier', 
+    \ 'coc-explorer',
+    \ 'coc-fzf-preview'
+\ ]
 
 """ THEME ---
 
