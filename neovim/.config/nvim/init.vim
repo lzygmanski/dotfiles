@@ -56,10 +56,11 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " Syntax support
-    Plug 'pangloss/vim-javascript'    " JavaScript support
-    Plug 'leafgarland/typescript-vim' " TypeScript syntax
-    Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
-    Plug 'jparise/vim-graphql'        " GraphQL syntax
+    Plug 'pangloss/vim-javascript'      " JavaScript support
+    Plug 'leafgarland/typescript-vim'   " TypeScript syntax
+    Plug 'maxmellon/vim-jsx-pretty'     " JS and JSX syntax
+    Plug 'peitalin/vim-jsx-typescript'  " TSX syntax
+    Plug 'jparise/vim-graphql'          " GraphQL syntax
 
     " Others
     Plug 'ThePrimeagen/vim-be-good'

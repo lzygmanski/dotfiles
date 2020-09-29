@@ -92,8 +92,10 @@ else
   alias vim="nvim"
   alias vi="vim"
   
-  export EDITOR='mvim'
+  export EDITOR='nvim'
 fi
+
+export AWS_PAGER=""
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
