@@ -115,7 +115,7 @@ case "$OSTYPE" in
     export PATH="/usr/local/opt/ruby/bin:$PATH"
   ;;
   linux*)
-    # ...
+    export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
   ;;
 esac
 
