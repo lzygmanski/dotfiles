@@ -151,12 +151,12 @@ nnoremap <leader>prn :CocSearch <C-R>=expand("<cword>")
 
 """ prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+vmap <leader>f :CocCommand prettier.formatFile<CR>
+nmap <leader>f :CocCommand prettier.formatFile<CR>
 
 """ explorer
-nmap <leader>e :CocCommand explorer<CR>
-nmap <leader>f :CocCommand explorer --position floating<CR>
+nmap <leader>b :CocCommand explorer<CR>
+nmap <leader>e :CocCommand explorer --position floating<CR>
 
 """ fzf
 nnoremap <C-p> :CocCommand fzf-preview.GitFiles<CR>
