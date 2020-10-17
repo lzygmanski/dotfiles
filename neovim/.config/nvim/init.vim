@@ -15,6 +15,8 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set nobackup
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
+set list
 
 """ SYNTAX START ---
 
