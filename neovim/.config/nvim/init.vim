@@ -75,6 +75,7 @@ call plug#end()
 " coc plugins
 let g:coc_global_extensions = [
     \ 'coc-tsserver',
+    \ 'coc-vetur',
     \ 'coc-json',
     \ 'coc-html',
     \ 'coc-css',
