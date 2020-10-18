@@ -63,6 +63,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'maxmellon/vim-jsx-pretty'     " JS and JSX syntax
     Plug 'peitalin/vim-jsx-typescript'  " TSX syntax
     Plug 'jparise/vim-graphql'          " GraphQL syntax
+    Plug 'lepture/vim-velocity'         " VTL syntax
 
     " Others
     Plug 'ThePrimeagen/vim-be-good'
