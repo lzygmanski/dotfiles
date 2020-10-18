@@ -53,7 +53,7 @@ call plug#begin('~/.config/nvim/plugged')
     " Styles
     Plug 'morhetz/gruvbox'
     Plug 'ryanoasis/vim-devicons'
-    
+
     " Coc and coc plugins plugins
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -64,6 +64,9 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'peitalin/vim-jsx-typescript'  " TSX syntax
     Plug 'jparise/vim-graphql'          " GraphQL syntax
     Plug 'lepture/vim-velocity'         " VTL syntax
+
+    " Snippets
+    Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 
     " Others
     Plug 'ThePrimeagen/vim-be-good'
@@ -79,7 +82,9 @@ let g:coc_global_extensions = [
     \ 'coc-tslint',
     \ 'coc-prettier', 
     \ 'coc-explorer',
-    \ 'coc-fzf-preview'
+    \ 'coc-snippets',
+    \ 'coc-fzf-preview',
+    \ 'coc-marketplace'
 \ ]
 
 """ THEME ---
