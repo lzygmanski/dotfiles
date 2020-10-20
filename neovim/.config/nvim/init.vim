@@ -82,6 +82,7 @@ let g:coc_global_extensions = [
     \ 'coc-css',
     \ 'coc-emmet',
     \ 'coc-tslint',
+    \ 'coc-eslint',
     \ 'coc-prettier', 
     \ 'coc-explorer',
     \ 'coc-snippets',
