@@ -40,14 +40,15 @@ let g:netrw_winsize=25 " Window size
 
 call plug#begin('~/.config/nvim/plugged')
     " General
-	Plug 'editorconfig/editorconfig-vim'
-	Plug 'vim-airline/vim-airline'
+    Plug 'editorconfig/editorconfig-vim'
+    Plug 'vim-airline/vim-airline'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-	Plug 'junegunn/fzf.vim'
+    Plug 'junegunn/fzf.vim'
+    Plug '907th/vim-auto-save'
 
     " Git support
-	Plug 'tpope/vim-fugitive'
-	Plug 'airblade/vim-gitgutter'
+    Plug 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter'
     Plug 'rbong/vim-flog'
 
     " Styles
