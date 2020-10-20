@@ -85,6 +85,7 @@ let g:coc_global_extensions = [
     \ 'coc-prettier', 
     \ 'coc-explorer',
     \ 'coc-snippets',
+    \ 'coc-pairs',
     \ 'coc-fzf-preview',
     \ 'coc-marketplace'
 \ ]
