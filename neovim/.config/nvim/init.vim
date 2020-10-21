@@ -193,6 +193,14 @@ function! s:select_current_word()
   return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
 endfunc
 
-""" Terminal normal mmode
+""" Terminal
 :tnoremap <C-w>n <C-\><C-n>
+
+function! HiddenTerminal()
+  :terminal
+  set bufhidden=hide
+endfunction
+
+command! HiddenTerminal call HiddenTerminal()
+nnoremap <leader>t :HiddenTerminal<CR>
 
