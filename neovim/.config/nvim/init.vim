@@ -192,3 +192,7 @@ function! s:select_current_word()
   endif
   return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
 endfunc
+
+""" Terminal normal mmode
+:tnoremap <C-w>n <C-\><C-n>
+
