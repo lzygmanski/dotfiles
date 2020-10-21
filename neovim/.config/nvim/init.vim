@@ -204,3 +204,5 @@ endfunction
 command! HiddenTerminal call HiddenTerminal()
 nnoremap <leader>t :HiddenTerminal<CR>
 
+""" Edit init.vim
+map <leader>v :vsp $MYVIMRC<CR>
