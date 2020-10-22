@@ -17,6 +17,8 @@ set expandtab
 set nobackup
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
 set list
+set autoread
+set autowrite
 
 """ SYNTAX START ---
 
@@ -44,7 +46,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    Plug '907th/vim-auto-save'
 
     " Git support
     Plug 'tpope/vim-fugitive'
@@ -95,6 +96,10 @@ let g:coc_global_extensions = [
 
 colorscheme gruvbox
 set background=dark
+
+""" AUTO SAVE---
+au FocusGained,BufEnter * :silent! !
+au FocusLost,WinLeave * :silent! w
 
 """ KEY MAPS ---
 
