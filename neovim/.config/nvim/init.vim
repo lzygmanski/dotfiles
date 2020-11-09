@@ -47,6 +47,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    Plug 'vim-test/vim-test'
 
     " Git support
     Plug 'tpope/vim-fugitive'
@@ -115,6 +116,10 @@ nnoremap <Leader>- :vertical resize -5<CR>
 """ git
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
+
+if has("nvim")
+    let test#strategy = "neovim"
+endif
 
 """ coc
 " Use tab for trigger completion with characters ahead and navigate.
