@@ -19,6 +19,7 @@ set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
 set list
 set autoread
 set autowrite
+set termguicolors
 
 """ SYNTAX START ---
 
@@ -52,8 +53,9 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'airblade/vim-gitgutter'
     Plug 'rbong/vim-flog'
 
-    " Styles
-    Plug 'morhetz/gruvbox'
+    " Styles / Themes
+    Plug 'gruvbox-community/gruvbox'
+    Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'ryanoasis/vim-devicons'
 
     " Coc and coc plugins plugins
@@ -94,8 +96,7 @@ let g:coc_global_extensions = [
 \ ]
 
 """ THEME ---
-
-colorscheme gruvbox
+colorscheme dracula 
 set background=dark
 
 """ AUTO SAVE---

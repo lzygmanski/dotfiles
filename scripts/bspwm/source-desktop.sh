@@ -25,6 +25,3 @@ git clone https://github.com/lzygmanski/dmenu
 git remote add suckless https://git.suckless.org/dmenu
 cd dmenu && make && sudo make install
 
-## Vim Plug
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

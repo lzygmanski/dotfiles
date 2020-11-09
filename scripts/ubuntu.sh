@@ -12,7 +12,9 @@ sh $MY_DIR/ubuntu/additional.sh
 sh $MY_DIR/general/pip.sh
 
 ## Install form Source
-sh $MY_DIR/general/source.sh
+sh $MY_DIR/general/source-base.sh
+sh $MY_DIR/bspwm/source-desktop.sh
 
 ## Link dotfiles
-sh $MY_DIR/general/link.sh
+sh $MY_DIR/general/link-base.sh
+sh $MY_DIR/bspwm/link-desktop.sh
