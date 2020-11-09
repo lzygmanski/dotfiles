@@ -22,3 +22,11 @@ Pull the repository, and then create the symbolic links using [GNU stow](https:/
 ## TO DO
 * font config
 * dunst config
+
+## Showcase
+
+![Theme 1](showcase/theme_1.png)
+
+![Theme 2](showcase/theme_2.png)
+
+![Theme 3](showcase/theme_3.png)
