@@ -5,3 +5,4 @@
 brew install wget
 brew install neofetch
 brew install neovim
+brew install python
