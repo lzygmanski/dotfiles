@@ -48,6 +48,8 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'vim-test/vim-test'
+    Plug 'puremourning/vimspector'
+    Plug 'szw/vim-maximizer'
 
     " Git support
     Plug 'tpope/vim-fugitive'
@@ -215,6 +217,27 @@ endfunction
 
 command! HiddenTerminal call HiddenTerminal()
 nnoremap <leader>t :HiddenTerminal<CR>
+
+""" Maximizer
+let g:maximizer_set_default_mapping = 0
+nnoremap <leader>m :MaximizerToggle!<CR>
+
+""" Vimspector
+
+nnoremap <leader>dl :call vimspector#Launch()<CR>
+nnoremap <leader>de :call vimspector#Reset()<CR>
+nnoremap <leader>d<leader> :call vimspector#Continue()<CR>
+
+nmap <leader>ds <Plug>VimspectorStop
+nmap <leader>dr <Plug>VimspectorRestart
+nmap <leader>dp <Plug>VimspectorPause
+nmap <leader>db <Plug>VimspectorToggleBreakpoint
+nmap <leader>dtcb <Plug>VimspectorToggleConditionalBreakpoint
+nmap <leader>dfb <Plug>VimspectorAddFunctionBreakpoint
+nmap <leader>do <Plug>VimspectorStepOver
+nmap <leader>di <Plug>VimspectorStepInto
+nmap <leader>da <Plug>VimspectorStepOut
+nmap <leader>dmc <Plug>VimspectorRunToCursor
 
 """ Edit init.vim
 map <leader>v :vsp $MYVIMRC<CR>
