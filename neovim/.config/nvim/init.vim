@@ -19,7 +19,7 @@ set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
 set list
 set autoread
 set autowrite
-set spelllang=en_us,pl_pl
+set spelllang=en_us,pl
 set spell
 
 """ SYNTAX START ---
