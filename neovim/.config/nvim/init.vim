@@ -19,6 +19,8 @@ set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
 set list
 set autoread
 set autowrite
+set spelllang=en_us,pl_pl
+set spell
 
 """ SYNTAX START ---
 
@@ -60,17 +62,11 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'ryanoasis/vim-devicons'
 
-    " Coc and coc plugins plugins
+    " Coc
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " Syntax support
-    Plug 'pangloss/vim-javascript'      " JS support
-    Plug 'leafgarland/typescript-vim'   " TS syntax
-    Plug 'posva/vim-vue'                " Vue
-    Plug 'peitalin/vim-jsx-typescript'  " TSX syntax
-    Plug 'maxmellon/vim-jsx-pretty'     " JS and JSX syntax
-    Plug 'jparise/vim-graphql'          " GraphQL syntax
-    Plug 'lepture/vim-velocity'         " VTL syntax
+    Plug 'sheerun/vim-polyglot'
 
     " Snippets
     Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
