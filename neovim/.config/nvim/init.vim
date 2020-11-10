@@ -19,7 +19,6 @@ set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
 set list
 set autoread
 set autowrite
-set termguicolors
 
 """ SYNTAX START ---
 
@@ -100,6 +99,11 @@ let g:coc_global_extensions = [
 
 """ THEME ---
 colorscheme dracula 
+"let g:dracula_italic = 0
+"highlight Normal ctermbg=None
+
+set termguicolors
+set t_Co=256
 set background=dark
 
 """ AUTO SAVE---
