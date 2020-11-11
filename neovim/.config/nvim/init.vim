@@ -96,8 +96,12 @@ let g:coc_global_extensions = [
 
 """ THEME ---
 colorscheme dracula 
-"let g:dracula_italic = 0
-"highlight Normal ctermbg=None
+
+if !has("nvim")
+    let g:dracula_colorterm = 0
+    let g:dracula_italic = 0
+    highlight Normal ctermbg=None
+endif
 
 set termguicolors
 set t_Co=256
