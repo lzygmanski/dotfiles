@@ -44,6 +44,7 @@ let g:netrw_winsize=25 " Window size
 
 call plug#begin('~/.config/nvim/plugged')
     " General
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'editorconfig/editorconfig-vim'
     Plug 'vim-airline/vim-airline'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -62,9 +63,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'ryanoasis/vim-devicons'
 
-    " Coc
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
     " Syntax support
     Plug 'sheerun/vim-polyglot'
 
@@ -77,22 +75,47 @@ call plug#end()
 
 " coc plugins
 let g:coc_global_extensions = [
-    \ 'coc-tsserver',
-    \ 'coc-vetur',
-    \ 'coc-json',
-    \ 'coc-yaml',
-    \ 'coc-html',
-    \ 'coc-css',
-    \ 'coc-emmet',
-    \ 'coc-tslint',
-    \ 'coc-eslint',
-    \ 'coc-prettier', 
-    \ 'coc-explorer',
-    \ 'coc-snippets',
-    \ 'coc-pairs',
-    \ 'coc-fzf-preview',
-    \ 'coc-marketplace'
+\   'coc-tsserver',
+\   'coc-vetur',
+\   'coc-json',
+\   'coc-yaml',
+\   'coc-html',
+\   'coc-css',
+\   'coc-emmet',
+\   'coc-tslint',
+\   'coc-eslint',
+\   'coc-prettier', 
+\   'coc-explorer',
+\   'coc-snippets',
+\   'coc-pairs',
+\   'coc-fzf-preview',
+\   'coc-marketplace'
 \ ]
+
+" coc settings 
+" Need to be in .vimrc to support both vim and neovim
+let g:coc_user_config = {
+\   'coc.preferences.formatOnSaveFiletypes': [
+\     'css',
+\     'markdown',
+\     'javascript',
+\     'javascriptreact',
+\     'typescript',
+\     'typescriptreact',
+\     'json',
+\     'graphql'
+\   ],
+\   'explorer.width': 40,
+\   'explorer.file.column.git.showIgnored': v:true,
+\   'explorer.file.showHiddenFiles': v:true,
+\   'explorer.previewAction.onHover': v:true,
+\   'explorer.icon.enableVimDevicons': v:true,
+\   'explorer.keyMappings': {
+\     '<cr>': ["expandable?", "expand", "open"],
+\     'v': "open:vsplit"
+\   },
+\   'prettier.eslintIntegration': v:true
+\ }
 
 """ THEME ---
 colorscheme dracula 
