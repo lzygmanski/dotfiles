@@ -118,16 +118,15 @@ let g:coc_user_config = {
 \ }
 
 """ THEME ---
-colorscheme dracula 
 
-if !has("nvim")
-    let g:dracula_colorterm = 0
-    let g:dracula_italic = 0
-    highlight Normal ctermbg=None
+if has("nvim")
+    colorscheme dracula 
+    set termguicolors
+    set t_Co=256
+else
+    colorscheme gruvbox 
 endif
 
-set termguicolors
-set t_Co=256
 set background=dark
 
 """ AUTO SAVE---
