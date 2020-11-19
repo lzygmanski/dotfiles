@@ -236,6 +236,7 @@ function! s:select_current_word()
 endfunc
 
 """ Terminal
+au TermOpen * setlocal nospell
 :tnoremap <C-w>n <C-\><C-n>
 
 function! HiddenTerminal()
