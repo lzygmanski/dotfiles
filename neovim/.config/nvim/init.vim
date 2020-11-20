@@ -114,7 +114,8 @@ let g:coc_user_config = {
 \     '<cr>': ["expandable?", "expand", "open"],
 \     'v': "open:vsplit"
 \   },
-\   'prettier.eslintIntegration': v:true
+\   'prettier.eslintIntegration': v:true,
+\   'prettier.printWidth': 100
 \ }
 
 """ THEME ---
