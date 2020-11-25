@@ -5,11 +5,11 @@ set nocompatible
 set path+=**
 set wildmenu
 set number relativenumber
+set cursorline
 set updatetime=100
 set clipboard=unnamed
 set mouse=n
 set nowrap
-set cmdheight=2
 set shortmess+=c
 set tabstop=4
 set shiftwidth=4
