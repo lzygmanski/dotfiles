@@ -89,7 +89,10 @@ let g:coc_global_extensions = [
 \   'coc-snippets',
 \   'coc-pairs',
 \   'coc-fzf-preview',
-\   'coc-marketplace'
+\   'coc-marketplace',
+\   'coc-python',
+\   'coc-jedi',
+\   'coc-pyright'
 \ ]
 
 " coc settings 
