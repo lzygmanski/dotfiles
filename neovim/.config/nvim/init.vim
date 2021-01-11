@@ -2,23 +2,35 @@
 
 set encoding=UTF-8
 set nocompatible
-set path+=**
-set wildmenu
-set number relativenumber
-set cursorline
-set updatetime=100
+set updatetime=50
 set clipboard=unnamed
 set mouse=n
-set nowrap
-set shortmess+=c
-set tabstop=4
+set exrc
+set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
-set nobackup
-set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
+set smartindent
 set list
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
+set nowrap
+set number relativenumber
+set cursorline
+set scrolloff=8
+set completeopt=menuone,noinsert,noselect
+set colorcolumn=80
+set signcolumn=yes
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set nohlsearch
+set incsearch
+set hidden
+set noerrorbells
 set autoread
 set autowrite
+set wildmenu
+set shortmess+=c
 set spelllang=en_us,pl
 set spell
 
