@@ -250,18 +250,6 @@ function! s:select_current_word()
   return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
 endfunc
 
-""" Terminal
-au TermOpen * setlocal nospell
-:tnoremap <C-w>n <C-\><C-n>
-
-function! HiddenTerminal()
-  :terminal
-  set bufhidden=hide
-endfunction
-
-command! HiddenTerminal call HiddenTerminal()
-nnoremap <leader>t :HiddenTerminal<CR>
-
 """ Maximizer
 let g:maximizer_set_default_mapping = 0
 nnoremap <leader>m :MaximizerToggle!<CR>
