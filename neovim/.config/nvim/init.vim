@@ -64,6 +64,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'vim-test/vim-test'
     Plug 'puremourning/vimspector'
     Plug 'szw/vim-maximizer'
+    Plug 'mbbill/undotree'
 
     " Git support
     Plug 'tpope/vim-fugitive'
@@ -77,6 +78,7 @@ call plug#begin('~/.config/nvim/plugged')
 
     " Syntax support
     Plug 'sheerun/vim-polyglot'
+    Plug 'lepture/vim-velocity'
 
     " Snippets
     Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
@@ -162,6 +164,9 @@ nnoremap <Leader>- :vertical resize -5<CR>
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
 
+""" undotree
+nnoremap <leader>u :UndotreeToggle<CR>
+
 if has("nvim")
     let test#strategy = "neovim"
 endif
@@ -224,14 +229,15 @@ vmap <leader>f :CocCommand prettier.formatFile<CR>
 nmap <leader>f :CocCommand prettier.formatFile<CR>
 
 """ explorer
-nmap <leader>b :CocCommand explorer<CR>
-nmap <leader>e :CocCommand explorer --position floating<CR>
+nmap <leader>e :CocCommand explorer<CR>
+nmap <leader>b :CocCommand explorer --position floating<CR>
 
 """ fzf
 nnoremap <C-p> :CocCommand fzf-preview.GitFiles<CR>
 nnoremap <leader>p :CocCommand fzf-preview.DirectoryFiles<CR>
 nnoremap <leader>ls :CocCommand fzf-preview.AllBuffers<CR>
 nnoremap <leader>gs :CocCommand fzf-preview.GitStatus<CR>
+nnoremap <leader>fd :CocCommand fzf-preview.CocDiagnostics <CR>
 
 """ Rg
 nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
