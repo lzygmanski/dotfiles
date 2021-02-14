@@ -1,4 +1,4 @@
-""" BASIC SETUP ---
+" ========== Options ========== "
 
 set encoding=UTF-8
 set nocompatible
@@ -33,29 +33,21 @@ set wildmenu
 set shortmess+=c
 set spelllang=en_us,pl
 set spell
-
-""" SYNTAX START ---
+set omnifunc=syntaxcomplete#Complete
 
 syntax enable
 filetype plugin on
 
-set omnifunc=syntaxcomplete#Complete
-
-""" FILE MANAGER: NETRW ---
-
-" Documentation for mapping in |netrw-browse-maps|
-" https://shapeshed.com/vim-netrw/
-
-let g:netrw_banner=0 " Disable banner
 let g:netrw_browse_split=4 " Open in window
 let g:netrw_altv=1 " Open split to the right
 let g:netrw_liststyle=3 " Tree view
 let g:netrw_winsize=25 " Window size
 
-""" PLUGINS ---
+" ========== Plugins ========== "
+
+let g:coc_global_extensions = ['coc-json', 'coc-git']
 
 call plug#begin('~/.config/nvim/plugged')
-    " General
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'editorconfig/editorconfig-vim'
     Plug 'vim-airline/vim-airline'
@@ -65,29 +57,64 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'puremourning/vimspector'
     Plug 'szw/vim-maximizer'
     Plug 'mbbill/undotree'
-
-    " Git support
     Plug 'tpope/vim-fugitive'
     Plug 'airblade/vim-gitgutter'
     Plug 'rbong/vim-flog'
-
-    " Styles / Themes
-    Plug 'gruvbox-community/gruvbox'
     Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'ryanoasis/vim-devicons'
-
-    " Syntax support
     Plug 'sheerun/vim-polyglot'
     Plug 'lepture/vim-velocity'
-
-    " Snippets
     Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
-
-    " Others
     Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
-" coc plugins
+" ========== Theme ========== "
+
+colorscheme dracula 
+set termguicolors
+set t_Co=256
+set background=dark
+
+" ========== Auto save ========== "
+
+au FocusGained,BufEnter * :silent! !
+au FocusLost,WinLeave * :silent! w
+
+" ========== Test ========== "
+
+let test#strategy = "neovim"
+
+" ========== Key Maps ========== "
+
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+
+" === Undotree === "
+nnoremap <leader>u :UndotreeToggle<CR>
+
+" === maximizer === "
+let g:maximizer_set_default_mapping = 0
+nnoremap <leader>m :MaximizerToggle!<CR>
+
+" === Vimspector === "
+
+nnoremap <leader>dl :call vimspector#Launch()<CR>
+nnoremap <leader>de :call vimspector#Reset()<CR>
+nnoremap <leader>d<leader> :call vimspector#Continue()<CR>
+
+nmap <leader>ds <Plug>VimspectorStop
+nmap <leader>dr <Plug>VimspectorRestart
+nmap <leader>dp <Plug>VimspectorPause
+nmap <leader>db <Plug>VimspectorToggleBreakpoint
+nmap <leader>dtcb <Plug>VimspectorToggleConditionalBreakpoint
+nmap <leader>dfb <Plug>VimspectorAddFunctionBreakpoint
+nmap <leader>do <Plug>VimspectorStepOver
+nmap <leader>di <Plug>VimspectorStepInto
+nmap <leader>da <Plug>VimspectorStepOut
+nmap <leader>dmc <Plug>VimspectorRunToCursor
+
+" === Coc === "
+
 let g:coc_global_extensions = [
 \   'coc-tsserver',
 \   'coc-vetur',
@@ -98,7 +125,7 @@ let g:coc_global_extensions = [
 \   'coc-emmet',
 \   'coc-tslint',
 \   'coc-eslint',
-\   'coc-prettier', 
+\   'coc-prettier',
 \   'coc-explorer',
 \   'coc-snippets',
 \   'coc-pairs',
@@ -109,69 +136,6 @@ let g:coc_global_extensions = [
 \   'coc-pyright'
 \ ]
 
-" coc settings 
-" Need to be in .vimrc to support both vim and neovim
-let g:coc_user_config = {
-\   'coc.preferences.formatOnSaveFiletypes': [
-\     'css',
-\     'markdown',
-\     'javascript',
-\     'javascriptreact',
-\     'typescript',
-\     'typescriptreact',
-\     'json',
-\     'graphql'
-\   ],
-\   'explorer.width': 40,
-\   'explorer.file.column.git.showIgnored': v:true,
-\   'explorer.file.showHiddenFiles': v:true,
-\   'explorer.previewAction.onHover': v:true,
-\   'explorer.icon.enableVimDevicons': v:true,
-\   'explorer.keyMappings': {
-\     '<cr>': ["expandable?", "expand", "open"],
-\     'v': "open:vsplit"
-\   },
-\   'prettier.eslintIntegration': v:true,
-\   'prettier.printWidth': 100
-\ }
-
-""" THEME ---
-
-if has("nvim")
-    colorscheme dracula 
-    set termguicolors
-    set t_Co=256
-else
-    colorscheme gruvbox 
-endif
-
-set background=dark
-
-""" AUTO SAVE---
-au FocusGained,BufEnter * :silent! !
-au FocusLost,WinLeave * :silent! w
-
-""" KEY MAPS ---
-
-nnoremap <SPACE> <Nop>
-let mapleader=" "
-
-""" basic
-nnoremap <Leader>+ :vertical resize +5<CR>
-nnoremap <Leader>- :vertical resize -5<CR>
-
-""" git
-nmap <leader>gj :diffget //3<CR>
-nmap <leader>gf :diffget //2<CR>
-
-""" undotree
-nnoremap <leader>u :UndotreeToggle<CR>
-
-if has("nvim")
-    let test#strategy = "neovim"
-endif
-
-""" coc
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -193,14 +157,10 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-" position. Coc only does snippet and additional edit on confirm.
-" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
-if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -213,69 +173,45 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" CocRestart
-nnoremap <leader>cr :CocRestart
-
-" renaming.
+" Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
-nnoremap <leader>prn :CocSearch <C-R>=expand("<cword>")
 
-""" prettier
+" Use CTRL-S for selections ranges.
+" Requires 'textDocument/selectionRange' support of language server.
+nmap <silent> <C-s> <Plug>(coc-range-select)
+xmap <silent> <C-s> <Plug>(coc-range-select)
+
+" Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 vmap <leader>f :CocCommand prettier.formatFile<CR>
 nmap <leader>f :CocCommand prettier.formatFile<CR>
 
-""" explorer
+" Explorer
 nmap <leader>e :CocCommand explorer<CR>
 nmap <leader>b :CocCommand explorer --position floating<CR>
 
-""" fzf
+" fzf
 nnoremap <C-p> :CocCommand fzf-preview.GitFiles<CR>
 nnoremap <leader>p :CocCommand fzf-preview.DirectoryFiles<CR>
 nnoremap <leader>ls :CocCommand fzf-preview.AllBuffers<CR>
 nnoremap <leader>gs :CocCommand fzf-preview.GitStatus<CR>
 nnoremap <leader>fd :CocCommand fzf-preview.CocDiagnostics <CR>
 
-""" Rg
-nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
-
-augroup highlight_yank
-    autocmd!
-    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
-augroup END
-
-""" Multiple cursor
-nmap <expr> <silent> <C-d> <SID>select_current_word()
-function! s:select_current_word()
-  if !get(g:, 'coc_cursors_activated', 0)
-    return "\<Plug>(coc-cursors-word)"
-  endif
-  return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
-endfunc
-
-""" Maximizer
-let g:maximizer_set_default_mapping = 0
-nnoremap <leader>m :MaximizerToggle!<CR>
-
-""" Vimspector
-
-nnoremap <leader>dl :call vimspector#Launch()<CR>
-nnoremap <leader>de :call vimspector#Reset()<CR>
-nnoremap <leader>d<leader> :call vimspector#Continue()<CR>
-
-nmap <leader>ds <Plug>VimspectorStop
-nmap <leader>dr <Plug>VimspectorRestart
-nmap <leader>dp <Plug>VimspectorPause
-nmap <leader>db <Plug>VimspectorToggleBreakpoint
-nmap <leader>dtcb <Plug>VimspectorToggleConditionalBreakpoint
-nmap <leader>dfb <Plug>VimspectorAddFunctionBreakpoint
-nmap <leader>do <Plug>VimspectorStepOver
-nmap <leader>di <Plug>VimspectorStepInto
-nmap <leader>da <Plug>VimspectorStepOut
-nmap <leader>dmc <Plug>VimspectorRunToCursor
-
-""" Edit init.vim
+" ========== Edit vim config ========== "
 map <leader>v :vsp $MYVIMRC<CR>
