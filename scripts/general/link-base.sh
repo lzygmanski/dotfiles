@@ -8,6 +8,5 @@ stow --no-folding -v -R -t $HOME \
 	git \
 	neovim \
 	tmux \
-	vim \
     oh-my-zsh \
 	bin
