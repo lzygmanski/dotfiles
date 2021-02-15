@@ -33,8 +33,14 @@ set background=dark
 au FocusGained,BufEnter * :silent! !
 au FocusLost,WinLeave * :silent! w
 
+" ========== Highlight yank ==========
+augroup highlight_yank
+  autocmd!
+  autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
+augroup END
+
 " ========== Plugins settings ==========
-"
+
 " ===== vim-test =====
 let test#strategy = "neovim"
 

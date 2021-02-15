@@ -23,6 +23,8 @@ set nobackup
 set undodir=~/.vim/undodir
 set nohlsearch
 set incsearch
+set ignorecase
+set smartcase
 set wildmenu
 set shortmess+=c
 
@@ -60,3 +62,20 @@ let mapleader=" "
 
 map <leader>v :vsp $MYVIMRC<CR>
 
+" ========== Other settings  ==========
+
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+autocmd BufWritePre * :call TrimWhitespace()
