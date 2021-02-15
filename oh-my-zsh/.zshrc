@@ -86,7 +86,7 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 alias vim="nvim"
-alias vi="vim"
+alias vi="command vim"
 export EDITOR='nvim'
 
 export AWS_PAGER=""
