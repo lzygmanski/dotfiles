@@ -1,6 +1,6 @@
 set nocompatible
 
-" ========== General Config ==========
+" ========== General settings ==========
 syntax on
 filetype plugin on
 
@@ -27,6 +27,7 @@ set ignorecase
 set smartcase
 set wildmenu
 set shortmess+=c
+set path+=**
 
 " ===== Window =====
 set number relativenumber
@@ -47,6 +48,7 @@ set smartindent
 set noswapfile
 set undofile
 set spelllang=en,pl
+set complete=.,w,b,u,t,i,kspell
 set omnifunc=syntaxcomplete#Complete
 
 " ===== netrw =====
@@ -56,22 +58,15 @@ let g:netrw_liststyle=3
 let g:netrw_winsize=25
 
 " ========== Mappings ==========
-
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
 map <leader>v :vsp $MYVIMRC<CR>
 
-" ========== Other settings  ==========
+" ========== Custom commands ==========
+command! MakeTags !ctags -R .
 
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
-
+" ========== Auto commands ==========
 fun! TrimWhitespace()
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
@@ -79,3 +74,12 @@ fun! TrimWhitespace()
 endfun
 
 autocmd BufWritePre * :call TrimWhitespace()
+
+" ========== Other settings  ==========
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
