@@ -61,7 +61,8 @@ let g:netrw_winsize=25
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
-map <leader>v :vsp $MYVIMRC<CR>
+nnoremap <leader>ev :vsp $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " ========== Custom commands ==========
 command! MakeTags !ctags -R .
