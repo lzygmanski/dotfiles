@@ -28,6 +28,7 @@ set smartcase
 set wildmenu
 set shortmess+=c
 set path+=**
+set clipboard=unnamedplus
 
 " ===== Window =====
 set number relativenumber
@@ -61,8 +62,8 @@ let g:netrw_winsize=25
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
-nnoremap <leader>ev :vsp $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+map <leader>ve :vsp $MYVIMRC<CR>
+map <leader>vs :source $MYVIMRC<CR>
 
 " ========== Custom commands ==========
 command! MakeTags !ctags -R .
