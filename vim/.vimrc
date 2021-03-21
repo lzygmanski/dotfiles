@@ -48,7 +48,7 @@ set expandtab
 set smartindent
 set noswapfile
 set undofile
-" set spelllang=en,pl
+set spelllang=en,pl
 set complete=.,w,b,u,t,i,kspell
 set omnifunc=syntaxcomplete#Complete
 

@@ -10,8 +10,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'neovim/nvim-lspconfig'
     Plug 'nvim-lua/completion-nvim'
     Plug 'euclidianAce/BetterLua.vim'
-    Plug 'tjdevries/nlua.nvim'
-    Plug 'tjdevries/lsp_extensions.nvim'
 
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
