@@ -19,9 +19,6 @@ local on_attach = function(client, bufnr)
 
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-
-  require'completion'.on_attach(client, bufnr)
-
   -- Mappings.
   local opts = { noremap=true, silent=true }
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -62,8 +59,16 @@ local on_attach = function(client, bufnr)
   end
 end
 
-require'lspconfig'.tsserver.setup{ on_attach=on_attach }
-require'lspconfig'.pyright.setup{ on_attach=on_attach }
+require'lspconfig'.bashls.setup {on_attach=on_attach}
+require'lspconfig'.cssls.setup {on_attach=on_attach}
+require'lspconfig'.dockerls.setup {on_attach=on_attach}
+require'lspconfig'.graphql.setup {on_attach=on_attach}
+require'lspconfig'.html.setup {on_attach=on_attach}
+require'lspconfig'.tsserver.setup {on_attach=on_attach}
+require'lspconfig'.jsonls.setup {on_attach=on_attach}
+require'lspconfig'.pyright.setup {on_attach=on_attach}
+require'lspconfig'.vimls.setup {on_attach=on_attach}
+require'lspconfig'.yamlls.setup {on_attach=on_attach}
 
 require'lspconfig'.sumneko_lua.setup {
     on_attach = on_attach,

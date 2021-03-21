@@ -1,3 +1,4 @@
+require('plugins.compe');
 require('plugins.maximizer');
 require('plugins.nvimTree');
 require('plugins.telescope');

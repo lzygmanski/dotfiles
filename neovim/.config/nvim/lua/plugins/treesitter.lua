@@ -4,7 +4,10 @@ require('nvim-treesitter.configs').setup {
         enable = true,
         use_languagetree=true
     },
-    indent = {
+    playground =  {
         enable = true
     },
+    rainbow = {
+        enable = true
+    }
 }

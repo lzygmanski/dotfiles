@@ -8,7 +8,10 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'editorconfig/editorconfig-vim'
 
     Plug 'neovim/nvim-lspconfig'
-    Plug 'nvim-lua/completion-nvim'
+    Plug 'hrsh7th/nvim-compe'
+    Plug 'hrsh7th/vim-vsnip'
+    Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
+
     Plug 'euclidianAce/BetterLua.vim'
 
     Plug 'nvim-lua/popup.nvim'
@@ -17,6 +20,7 @@ call plug#begin('~/.config/nvim/plugged')
 
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-treesitter/playground'
+    Plug 'p00f/nvim-ts-rainbow'
 
     Plug 'mbbill/undotree'
 
@@ -33,6 +37,10 @@ call plug#begin('~/.config/nvim/plugged')
 
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'kyazdani42/nvim-tree.lua'
+
+    Plug 'sbdchd/neoformat'
+
+    Plug 'liuchengxu/vim-which-key'
 
     Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
@@ -53,3 +61,19 @@ augroup YankHighlight
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
 augroup end
+
+" ========== Others ==========
+
+let g:neoformat_run_all_formatters = 1
+
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+
+highlight link CompeDocumentation NormalFloat
+
+nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
+vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
+
