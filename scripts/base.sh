@@ -2,8 +2,6 @@
 
 MY_DIR="$( cd "$(dirname "$0")" ; pwd -P )"
 
-## Install form Source
-sh $MY_DIR/general/source-base.sh
-
-## Link dotfiles
-sh $MY_DIR/general/link-base.sh
+sh $MY_DIR/base/source-base.sh
+sh $MY_DIR/base/pip.sh
+sh $MY_DIR/base/link-base.sh
