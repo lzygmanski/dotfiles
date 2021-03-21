@@ -123,7 +123,7 @@ require'lspconfig'.sumneko_lua.setup {
     }
 }
 
-lspconfig.efm.setup {
+require'lspconfig'.efm.setup {
     init_options = {documentFormatting = false, codeAction = false},
     filetypes = {'javascript', 'javascriptreact', 'typescript', 'typescriptreact'},
     settings = {
