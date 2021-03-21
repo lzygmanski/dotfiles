@@ -38,7 +38,7 @@ set cursorline
 set scrolloff=8
 set colorcolumn=100
 set signcolumn=yes
-set spell
+"set spell
 
 " ===== Buffer =====
 set tabstop=4
@@ -48,7 +48,7 @@ set expandtab
 set smartindent
 set noswapfile
 set undofile
-set spelllang=en,pl
+set spelllang=en
 set complete=.,w,b,u,t,i,kspell
 set omnifunc=syntaxcomplete#Complete
 
