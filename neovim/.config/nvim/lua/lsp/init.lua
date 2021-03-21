@@ -2,6 +2,14 @@ USER = vim.fn.expand('$USER')
 
 local sumneko_root_path = ""
 local sumneko_binary = ""
+local eslint = {
+    lintCommand = "eslint -f unix --stdin --stdin-filename ${INPUT}",
+    lintIgnoreExitCode = true,
+    lintStdin = true,
+    lintFormats = {"%f:%l:%c: %m"},
+    formatCommand = "eslint --fix-to-stdout --stdin --stdin-filename=${INPUT}",
+    formatStdin = true
+}
 
 if vim.fn.has("mac") == 1 then
     sumneko_root_path = "/Users/" .. USER .. "/Dev/lua-language-server"
@@ -115,3 +123,15 @@ require'lspconfig'.sumneko_lua.setup {
     }
 }
 
+require'lspconfig'.efm.setup {
+    init_options = {documentFormatting = false, codeAction = false},
+    filetypes = {'javascript', 'javascriptreact', 'typescript', 'typescriptreact'},
+    settings = {
+        languages = {
+            javascript = {eslint},
+            javascriptreact = {eslint},
+            typescript = {eslint},
+            typescriptreact = {eslint}
+        }
+    }
+}
