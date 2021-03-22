@@ -7,17 +7,15 @@ local sumneko_binary = ""
 
 if vim.fn.has("mac") == 1 then
     sumneko_root_path = "/Users/" .. USER .. "/Dev/lua-language-server"
-    sumneko_binary = "/Users/" .. USER ..
-                         "/Dev/lua-language-server/bin/macOS/lua-language-server"
+    sumneko_binary = "/Users/" .. USER .. "/Dev/lua-language-server/bin/macOS/lua-language-server"
 elseif vim.fn.has("unix") == 1 then
     sumneko_root_path = "/home/" .. USER .. "/Dev/lua-language-server"
-    sumneko_binary = "/home/" .. USER ..
-                         "/Dev/lua-language-server/bin/Linux/lua-language-server"
+    sumneko_binary = "/home/" .. USER .. "/Dev/lua-language-server/bin/Linux/lua-language-server"
 else
     print("Unsupported system for sumneko")
 end
 
-require'lspconfig'.sumneko_lua.setup {
+require('nlua.lsp.nvim').setup(require('lspconfig'), {
     on_attach = on_attach,
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
     settings = {
@@ -41,4 +39,4 @@ require'lspconfig'.sumneko_lua.setup {
             }
         }
     }
-}
+})

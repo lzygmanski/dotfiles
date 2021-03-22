@@ -9,6 +9,7 @@ call plug#begin('~/.config/nvim/plugged')
 
     Plug 'neovim/nvim-lspconfig'
 
+    Plug 'tjdevries/nlua.nvim'
     Plug 'euclidianAce/BetterLua.vim'
 
     Plug 'hrsh7th/nvim-compe'
@@ -42,6 +43,8 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'sbdchd/neoformat'
 
     Plug 'liuchengxu/vim-which-key'
+
+    Plug 'jiangmiao/auto-pairs'
 
     Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
