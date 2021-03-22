@@ -16,3 +16,13 @@ require'lspconfig'.tsserver.setup {on_attach = on_attach, settings = {documentFo
 require 'lsp.efm'
 require 'lsp.lua'
 
+vim.api.nvim_exec([[
+sign define LspDiagnosticsSignError text=綠 texthl=LspDiagnosticsSignError linehl= numhl=
+sign define LspDiagnosticsSignWarning text=綠 texthl=LspDiagnosticsSignWarning linehl= numhl=
+sign define LspDiagnosticsSignInformation text=綠 texthl=LspDiagnosticsSignInformation linehl= numhl=
+sign define LspDiagnosticsSignHint text=綠 texthl=LspDiagnosticsSignHint linehl= numhl=
+]], true)
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+    vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
+                 {virtual_text = {spacing = 0, prefix = '!'}});
