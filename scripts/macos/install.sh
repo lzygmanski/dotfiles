@@ -6,8 +6,6 @@ brew install wget
 brew install stow
 brew install neofetch
 
-brew install neovim
-
 brew install python
 brew install luajit
 brew install ninja
@@ -15,3 +13,6 @@ brew install go
 
 brew install ShellCheck
 brew install shfmt
+
+brew install vim
+brew install neovim
