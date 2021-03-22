@@ -9,11 +9,9 @@ require'lspconfig'.jsonls.setup {on_attach = on_attach}
 require'lspconfig'.pyright.setup {on_attach = on_attach}
 require'lspconfig'.vimls.setup {on_attach = on_attach}
 require'lspconfig'.yamlls.setup {on_attach = on_attach}
+require'lspconfig'.vuels.setup {on_attach = on_attach}
 
-require'lspconfig'.tsserver.setup {
-    on_attach = on_attach,
-    settings = {documentFormatting = false}
-}
+require'lspconfig'.tsserver.setup {on_attach = on_attach, settings = {documentFormatting = false}}
 
 require 'lsp.efm'
 require 'lsp.lua'
