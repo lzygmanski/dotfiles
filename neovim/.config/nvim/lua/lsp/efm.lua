@@ -9,6 +9,11 @@ local eslint = {
 
 local prettier = {formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true}
 
+local prettier_eslint = {
+    formatCommand = "prettier_eslint --stdin --stdin-filepath ${INPUT}",
+    formatStdin = true
+}
+
 local luaFormat = {
     formatCommand = "lua-format -i --no-keep-simple-function-one-line --column-limit=100",
     formatStdin = true
@@ -51,3 +56,4 @@ require'lspconfig'.efm.setup {
         }
     }
 }
+

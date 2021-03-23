@@ -174,6 +174,18 @@ gls.right[2] = {
 }
 
 gls.right[3] = {
+    FileFormatText = {
+        provider = function()
+            return vim.bo.filetype:upper()
+        end,
+        condition = condition.hide_in_width,
+        separator = ' ',
+        separator_highlight = {'NONE', colors.background},
+        highlight = {colors.green, colors.background, 'bold'}
+    }
+}
+
+gls.right[4] = {
     GitIcon = {
         provider = function()
             return '  '
@@ -185,7 +197,7 @@ gls.right[3] = {
     }
 }
 
-gls.right[4] = {
+gls.right[5] = {
     GitBranch = {
         provider = 'GitBranch',
         condition = condition.check_git_workspace,
@@ -193,7 +205,7 @@ gls.right[4] = {
     }
 }
 
-gls.right[5] = {
+gls.right[6] = {
     DiffAdd = {
         provider = 'DiffAdd',
         condition = condition.hide_in_width,
@@ -201,7 +213,7 @@ gls.right[5] = {
         highlight = {colors.green, colors.background}
     }
 }
-gls.right[6] = {
+gls.right[7] = {
     DiffModified = {
         provider = 'DiffModified',
         condition = condition.hide_in_width,
@@ -209,7 +221,7 @@ gls.right[6] = {
         highlight = {colors.orange, colors.background}
     }
 }
-gls.right[7] = {
+gls.right[8] = {
     DiffRemove = {
         provider = 'DiffRemove',
         condition = condition.hide_in_width,
@@ -218,7 +230,7 @@ gls.right[7] = {
     }
 }
 
-gls.right[8] = {
+gls.right[9] = {
     RainbowBlue = {
         provider = function()
             return '   '

@@ -3,6 +3,7 @@
 npm install -g eslint
 npm install -g eslint_d
 npm install -g prettier
+npm install -g prettier-eslint
 
 npm install -g bash-language-server
 npm install -g vscode-css-languageserver-bin
