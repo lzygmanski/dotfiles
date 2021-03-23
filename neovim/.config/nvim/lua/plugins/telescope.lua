@@ -21,4 +21,10 @@ vim.api.nvim_set_keymap('n', '<leader>fc',
 vim.api.nvim_set_keymap('n', '<leader>gs',
                         [[<cmd>lua require('telescope.builtin').git_status()<cr>]],
                         opts)
+vim.api.nvim_set_keymap('n', '<leader>ft',
+                        [[<cmd>lua require('telescope.builtin').treesitter()<cr>]],
+                        opts)
+vim.api.nvim_set_keymap('n', '<leader>ff',
+                        [[<cmd>lua require('telescope.builtin').builtin()<cr>]],
+                        opts)
 
