@@ -8,7 +8,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'editorconfig/editorconfig-vim'
 
     Plug 'neovim/nvim-lspconfig'
-
     Plug 'tjdevries/nlua.nvim'
 
     Plug 'euclidianAce/BetterLua.vim'
@@ -42,6 +41,8 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'kyazdani42/nvim-tree.lua'
 
+    Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+
     Plug 'sbdchd/neoformat'
 
     Plug 'liuchengxu/vim-which-key'
@@ -60,6 +61,7 @@ colorscheme dracula
 set termguicolors
 set background=dark
 hi Normal guibg=NONE ctermbg=NONE
+hi StatusLine guibg=#282A36
 
 " ========== Autocmds ==========
 

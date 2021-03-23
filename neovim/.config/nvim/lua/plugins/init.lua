@@ -1,4 +1,5 @@
 require('plugins.compe');
+require('plugins.galaxyline');
 require('plugins.maximizer');
 require('plugins.neoformat');
 require('plugins.nvimTree');
