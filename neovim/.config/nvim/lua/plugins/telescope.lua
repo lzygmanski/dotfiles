@@ -27,4 +27,8 @@ vim.api.nvim_set_keymap('n', '<leader>ft',
 vim.api.nvim_set_keymap('n', '<leader>ff',
                         [[<cmd>lua require('telescope.builtin').builtin()<cr>]],
                         opts)
+vim.api.nvim_set_keymap('n', '<leader>fd',
+                        [[<cmd>lua require('lzygmanski.telescope').find_dotfiles()<cr>]],
+                        opts)
+
 
