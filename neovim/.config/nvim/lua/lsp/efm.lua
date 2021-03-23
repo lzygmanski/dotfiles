@@ -35,7 +35,7 @@ local flake8 = {
 require'lspconfig'.efm.setup {
     init_options = {documentFormatting = true, codeAction = true},
     filetypes = {
-        'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'html', 'css', 'json',
+        'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue', 'html', 'css', 'json',
         'yaml', 'markdown', 'lua', 'sh', 'python', "graphql"
     },
     settings = {
@@ -44,6 +44,7 @@ require'lspconfig'.efm.setup {
             javascript = {prettier, eslint},
             typescriptreact = {prettier, eslint},
             javascriptreact = {prettier, eslint},
+            vue = {prettier, eslint},
             html = {prettier},
             css = {prettier},
             json = {prettier},
