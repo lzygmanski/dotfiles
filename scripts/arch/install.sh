@@ -1,17 +1,21 @@
 #!/bin/sh
 
-sudo pacman -S wget
-sudo pacman -S stow
-sudo pacman -S neofetch
+sudo pacman -Syy
 
-sudo pacman -S python
-sudo pacman -S luajit
-sudo pacman -S ninja
-sudo pacman -S go
+sudo pacman -S --noconfirm cmake
+sudo pacman -S --noconfirm wget stow neofetch
+sudo pacman -S --noconfirm python luajit ninja go luarocks
+sudo pacman -S --noconfirm shellcheck shfmt
+#sudo pacman -S --noconfirm vim neovim python-pynvim
 
-sudo pacman -S shellcheck
-sudo pacman -S shfmt
+cd $HOME
+sudo rm -rf Dev/lua-language-server
 
-sudo pacman -S vim
-sudo pacman -S neovim
-sudo pacman -S python-pynvim
+git clone https://github.com/sumneko/lua-language-server  ~/Dev/lua-language-server
+cd Dev/lua-language-server
+git submodule update --init --recursive
+
+cd 3rd/luamake
+ninja -f ninja/linux.ninja
+cd ../..
+./3rd/luamake/luamake rebuild

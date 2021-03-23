@@ -10,7 +10,9 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'neovim/nvim-lspconfig'
 
     Plug 'tjdevries/nlua.nvim'
+
     Plug 'euclidianAce/BetterLua.vim'
+    Plug 'jparise/vim-graphql'
 
     Plug 'hrsh7th/nvim-compe'
     Plug 'hrsh7th/vim-vsnip'
@@ -72,3 +74,4 @@ autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.lua lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.sh lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.graphql lua vim.lsp.buf.formatting_sync(nil, 1000)

@@ -18,4 +18,4 @@ npm install -g vls
 
 go get github.com/mattn/efm-langserver@HEAD
 
-luarocks install --server=https://luarocks.org/dev luaformatter
+luarocks --local install --server=https://luarocks.org/dev luaformatter

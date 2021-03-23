@@ -31,7 +31,7 @@ require'lspconfig'.efm.setup {
     init_options = {documentFormatting = true, codeAction = true},
     filetypes = {
         'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'html', 'css', 'json',
-        'yaml', 'markdown', 'lua', 'sh', 'python'
+        'yaml', 'markdown', 'lua', 'sh', 'python', "graphql"
     },
     settings = {
         languages = {
@@ -46,7 +46,8 @@ require'lspconfig'.efm.setup {
             markdown = {prettier},
             lua = {luaFormat},
             sh = {shellcheck, shfmt},
-            python = {flake8}
+            python = {flake8},
+            graphql = {prettier}
         }
     }
 }
