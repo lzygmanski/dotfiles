@@ -51,8 +51,8 @@ require'lspconfig'.efm.setup {
     end,
     init_options = {documentFormatting = true, codeAction = true},
     filetypes = {
-        'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue', 'html', 'css', 'json',
-        'yaml', 'markdown', 'lua', 'sh', 'python', "graphql"
+        'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue', 'html', 'css',
+        'json', 'yaml', 'markdown', 'lua', 'sh', 'python', "graphql"
     },
     settings = {
         languages = {

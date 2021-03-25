@@ -10,13 +10,9 @@ vim.g.nvim_tree_width_allow_resize = 1
 
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
-vim.g.nvim_tree_bindings = {
-    ["l"] = tree_cb("edit"),
-    ["h"] = tree_cb("close_node")
-}
+vim.g.nvim_tree_bindings = {["l"] = tree_cb("edit"), ["h"] = tree_cb("close_node")}
 
-vim.api.nvim_set_keymap('n', '<Leader>b', ':NvimTreeToggle<CR>',
-                        {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>b', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
 
 -- disable word wrap
 vim.cmd('autocmd FileType LuaTree setlocal nowrap')

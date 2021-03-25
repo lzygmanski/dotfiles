@@ -18,11 +18,10 @@ brew install shfmt
 brew install vim
 brew install neovim
 
-
 cd $HOME
 sudo rm -rf Dev/lua-language-server
 
-git clone https://github.com/sumneko/lua-language-server  ~/Dev/lua-language-server
+git clone https://github.com/sumneko/lua-language-server ~/Dev/lua-language-server
 cd Dev/lua-language-server
 git submodule update --init --recursive
 

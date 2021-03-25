@@ -13,4 +13,3 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools
 cd $HOME
 sudo rm -rf .tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-

@@ -11,7 +11,7 @@ sudo pacman -S --noconfirm shellcheck shfmt
 cd $HOME
 sudo rm -rf Dev/lua-language-server
 
-git clone https://github.com/sumneko/lua-language-server  ~/Dev/lua-language-server
+git clone https://github.com/sumneko/lua-language-server ~/Dev/lua-language-server
 cd Dev/lua-language-server
 git submodule update --init --recursive
 

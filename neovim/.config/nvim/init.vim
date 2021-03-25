@@ -72,6 +72,3 @@ augroup end
 
 autocmd WinEnter,TabEnter,FocusGained * checktime
 
-lua << EOF
-vim.lsp.set_log_level("debug")
-EOF

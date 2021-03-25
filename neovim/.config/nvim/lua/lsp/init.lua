@@ -2,30 +2,15 @@ local nvim_lsp = require 'lspconfig'
 local on_attach = require 'lsp.onAttach'
 local on_attach_no_format = require 'lsp.onAttachNoFormat'
 
-local servers = {
-    "dockerls",
-    "pyright",
-    "vimls"
-}
+local servers = {"dockerls", "pyright", "vimls"}
 
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup { on_attach = on_attach }
-end
+for _, lsp in ipairs(servers) do nvim_lsp[lsp].setup {on_attach = on_attach} end
 
 local servers_no_format = {
-    "bashls",
-    "cssls",
-    "graphql",
-    "html",
-    "jsonls",
-    "yamlls",
-    "vuels",
-    "tsserver"
+    "bashls", "cssls", "graphql", "html", "jsonls", "yamlls", "vuels", "tsserver"
 }
 
-for _, lsp in ipairs(servers_no_format) do
-  nvim_lsp[lsp].setup { on_attach = on_attach_no_format }
-end
+for _, lsp in ipairs(servers_no_format) do nvim_lsp[lsp].setup {on_attach = on_attach_no_format} end
 
 require 'lsp.efm'
 require 'lsp.lua'
