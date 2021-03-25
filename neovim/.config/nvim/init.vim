@@ -70,11 +70,8 @@ augroup YankHighlight
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
 augroup end
 
-autocmd BufWritePre *.js lua vim.lsp.buf.formatting()
-autocmd BufWritePre *.ts lua vim.lsp.buf.formatting()
-autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting()
-autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting()
-autocmd BufWritePre *.vue lua vim.lsp.buf.formatting()
-autocmd BufWritePre *.lua lua vim.lsp.buf.formatting()
-autocmd BufWritePre *.sh lua vim.lsp.buf.formatting()
-autocmd BufWritePre *.graphql lua vim.lsp.buf.formatting()
+autocmd WinEnter,TabEnter,FocusGained * checktime
+
+lua << EOF
+vim.lsp.set_log_level("debug")
+EOF

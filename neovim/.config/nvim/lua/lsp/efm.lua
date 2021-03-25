@@ -33,6 +33,22 @@ local flake8 = {
 }
 
 require'lspconfig'.efm.setup {
+    on_attach = function(client, bufnr)
+        local function buf_set_keymap(...)
+            vim.api.nvim_buf_set_keymap(bufnr, ...)
+        end
+
+        local opts = {noremap = true, silent = true}
+
+        if client.resolved_capabilities.document_formatting then
+            buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+            vim.api.nvim_exec([[
+                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 1000)
+            ]], false)
+        elseif client.resolved_capabilities.document_range_formatting then
+            buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
+        end
+    end,
     init_options = {documentFormatting = true, codeAction = true},
     filetypes = {
         'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue', 'html', 'css', 'json',

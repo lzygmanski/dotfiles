@@ -1,26 +1,40 @@
+local nvim_lsp = require 'lspconfig'
 local on_attach = require 'lsp.onAttach'
+local on_attach_no_format = require 'lsp.onAttachNoFormat'
 
-require'lspconfig'.bashls.setup {on_attach = on_attach}
-require'lspconfig'.cssls.setup {on_attach = on_attach}
-require'lspconfig'.dockerls.setup {on_attach = on_attach}
-require'lspconfig'.graphql.setup {on_attach = on_attach}
-require'lspconfig'.html.setup {on_attach = on_attach}
-require'lspconfig'.jsonls.setup {on_attach = on_attach}
-require'lspconfig'.pyright.setup {on_attach = on_attach}
-require'lspconfig'.vimls.setup {on_attach = on_attach}
-require'lspconfig'.yamlls.setup {on_attach = on_attach}
+local servers = {
+    "dockerls",
+    "pyright",
+    "vimls"
+}
 
-require'lspconfig'.vuels.setup {on_attach = on_attach, settings = {documentFormatting = false}}
-require'lspconfig'.tsserver.setup {on_attach = on_attach, settings = {documentFormatting = false}}
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup { on_attach = on_attach }
+end
+
+local servers_no_format = {
+    "bashls",
+    "cssls",
+    "graphql",
+    "html",
+    "jsonls",
+    "yamlls",
+    "vuels",
+    "tsserver"
+}
+
+for _, lsp in ipairs(servers_no_format) do
+  nvim_lsp[lsp].setup { on_attach = on_attach_no_format }
+end
 
 require 'lsp.efm'
 require 'lsp.lua'
 
 vim.api.nvim_exec([[
-sign define LspDiagnosticsSignError text=綠 texthl=LspDiagnosticsSignError linehl= numhl=
-sign define LspDiagnosticsSignWarning text=綠 texthl=LspDiagnosticsSignWarning linehl= numhl=
-sign define LspDiagnosticsSignInformation text=綠 texthl=LspDiagnosticsSignInformation linehl= numhl=
-sign define LspDiagnosticsSignHint text=綠 texthl=LspDiagnosticsSignHint linehl= numhl=
+    sign define LspDiagnosticsSignError text=綠 texthl=LspDiagnosticsSignError linehl= numhl=
+    sign define LspDiagnosticsSignWarning text=綠 texthl=LspDiagnosticsSignWarning linehl= numhl=
+    sign define LspDiagnosticsSignInformation text=綠 texthl=LspDiagnosticsSignInformation linehl= numhl=
+    sign define LspDiagnosticsSignHint text=綠 texthl=LspDiagnosticsSignHint linehl= numhl=
 ]], true)
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
