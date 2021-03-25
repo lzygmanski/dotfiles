@@ -1,6 +1,6 @@
 USER = vim.fn.expand('$USER')
 
-local on_attach = require('lsp.onAttach')
+local on_attach = require('lsp.on_attach')
 
 local sumneko_root_path = ""
 local sumneko_binary = ""

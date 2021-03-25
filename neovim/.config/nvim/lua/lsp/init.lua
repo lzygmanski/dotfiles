@@ -1,6 +1,6 @@
 local nvim_lsp = require 'lspconfig'
-local on_attach = require 'lsp.onAttach'
-local on_attach_no_format = require 'lsp.onAttachNoFormat'
+local on_attach = require 'lsp.on_attach'
+local on_attach_no_format = require 'lsp.on_attach_no_format'
 
 local servers = {"dockerls", "pyright", "vimls"}
 

@@ -2,7 +2,7 @@ require('plugins.compe');
 require('plugins.galaxyline');
 require('plugins.maximizer');
 require('plugins.neoformat');
-require('plugins.nvimTree');
+require('plugins.nvimtree');
 require('plugins.telescope');
 require('plugins.treesitter');
 require('plugins.undotree');
