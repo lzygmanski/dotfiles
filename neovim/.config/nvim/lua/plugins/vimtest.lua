@@ -1,1 +1,1 @@
-vim.g["test#strategy"] = 1
+vim.g["test#strategy"] = 'neovim'
