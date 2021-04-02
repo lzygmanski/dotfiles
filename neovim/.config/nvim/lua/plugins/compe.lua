@@ -17,7 +17,7 @@ require'compe'.setup {
     source = {
         path = true,
         emoji = true,
-        omni = true,
+        omni = false,
         buffer = true,
         calc = true,
         nvim_lsp = true,
@@ -25,7 +25,7 @@ require'compe'.setup {
         vsnip = true,
         spell = true,
         tags = true,
-        treesitter = true
+        treesitter = false
     }
 }
 
@@ -83,3 +83,4 @@ vim.api.nvim_set_keymap("i", "<C-d>", "compe#scroll({ 'delta': -4 })",
                         {noremap = true, expr = true, silent = true})
 
 vim.cmd [[highlight link CompeDocumentation NormalFloat]]
+

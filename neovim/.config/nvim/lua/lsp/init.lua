@@ -2,6 +2,8 @@ local nvim_lsp = require 'lspconfig'
 local on_attach = require 'lsp.on_attach'
 local on_attach_no_format = require 'lsp.on_attach_no_format'
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
 local servers = {"dockerls", "pyright", "vimls"}
 local servers_no_format = {
     "bashls", "cssls", "graphql", "html", "jsonls", "yamlls", "vuels", "tsserver"
@@ -25,3 +27,5 @@ vim.api.nvim_exec([[
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
     vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
                  {virtual_text = {spacing = 0, prefix = '!'}});
+
+capabilities.textDocument.completion.completionItem.snippetSupport = true
