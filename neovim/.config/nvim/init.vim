@@ -35,6 +35,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'airblade/vim-gitgutter'
     Plug 'rbong/vim-flog'
+    Plug 'ThePrimeagen/git-worktree.nvim'
 
     Plug 'dracula/vim', { 'as': 'dracula' }
 

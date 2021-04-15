@@ -1,3 +1,5 @@
+require("telescope").load_extension("git_worktree")
+
 local opts = {noremap = true, silent = true}
 
 vim.api.nvim_set_keymap('n', '<leader>p', [[<cmd>lua require('telescope.builtin').git_files()<cr>]],
@@ -17,7 +19,12 @@ vim.api.nvim_set_keymap('n', '<leader>gs',
 vim.api.nvim_set_keymap('n', '<leader>ft',
                         [[<cmd>lua require('telescope.builtin').treesitter()<cr>]], opts)
 vim.api.nvim_set_keymap('n', '<leader>ff', [[<cmd>lua require('telescope.builtin').builtin()<cr>]],
+
+-- Custom
                         opts)
 vim.api.nvim_set_keymap('n', '<leader>fd',
                         [[<cmd>lua require('lzygmanski.telescope').find_dotfiles()<cr>]], opts)
 
+vim.api.nvim_set_keymap('n', '<leader>gw',
+                        [[<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>]],
+                        opts)
