@@ -1,13 +1,15 @@
 vim.g.nvim_tree_side = 'left'
 vim.g.nvim_tree_width = 35
 vim.g.nvim_tree_auto_open = 0
-vim.g.nvim_tree_auto_close = 1
+vim.g.nvim_tree_auto_close = 0
 vim.g.nvim_tree_follow = 1
 vim.g.nvim_tree_indent_markers = 0
 vim.g.nvim_tree_hide_dotfiles = 0
 vim.g.nvim_tree_git_hl = 0
 vim.g.nvim_tree_width_allow_resize = 1
--- vim.g.nvim_tree_disable_netrw = 0
+
+vim.g.nvim_tree_disable_netrw = 0
+vim.g.nvim_tree_hijack_netrw = 1
 
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
