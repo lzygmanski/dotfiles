@@ -49,6 +49,8 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'liuchengxu/vim-which-key'
 
     Plug 'jiangmiao/auto-pairs'
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-commentary'
 
     Plug 'ThePrimeagen/vim-be-good'
 call plug#end()

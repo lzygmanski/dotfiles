@@ -5,9 +5,7 @@ local on_attach_no_format = require 'lsp.on_attach_no_format'
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local servers = {"dockerls", "pyright", "vimls"}
-local servers_no_format = {
-    "bashls", "cssls", "graphql", "html", "jsonls", "yamlls", "vuels", "tsserver"
-}
+local servers_no_format = {"bashls", "cssls", "graphql", "html", "vuels", "tsserver"}
 
 for _, lsp in ipairs(servers) do nvim_lsp[lsp].setup {on_attach = on_attach} end
 for _, lsp in ipairs(servers_no_format) do nvim_lsp[lsp].setup {on_attach = on_attach_no_format} end
@@ -16,6 +14,9 @@ nvim_lsp.angularls.setup {}
 
 require 'lsp.efm'
 require 'lsp.lua'
+require 'lsp.emmet'
+require 'lsp.json'
+require 'lsp.yml'
 
 vim.api.nvim_exec([[
     sign define LspDiagnosticsSignError text=綠 texthl=LspDiagnosticsSignError linehl= numhl=

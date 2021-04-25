@@ -6,7 +6,7 @@ require'compe'.setup {
     debug = false,
     min_length = 1,
     preselect = 'enable',
-    throttle_time = 50,
+    throttle_time = 0,
     source_timeout = 0,
     incomplete_delay = 0,
     max_abbr_width = 100,
@@ -25,7 +25,7 @@ require'compe'.setup {
         vsnip = true,
         spell = true,
         tags = true,
-        treesitter = false
+        treesitter = true
     }
 }
 

@@ -17,6 +17,7 @@ npm install -g pyright
 npm install -g vim-language-server
 npm install -g yaml-language-server
 npm install -g vls
+npm install -g emmet-ls
 
 go get github.com/mattn/efm-langserver@HEAD
 
