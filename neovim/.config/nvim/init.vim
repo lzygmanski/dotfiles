@@ -20,6 +20,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
+    Plug 'jremmen/vim-ripgrep'
 
     Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'nvim-treesitter/playground'
@@ -40,14 +41,13 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'dracula/vim', { 'as': 'dracula' }
 
     Plug 'kyazdani42/nvim-web-devicons'
-    Plug 'kyazdani42/nvim-tree.lua'
+    " Plug 'kyazdani42/nvim-tree.lua'
+    Plug 'sindrets/nvim-tree.lua', { 'branch': 'feat/window-picker' }
 
     Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+    Plug 'folke/which-key.nvim'
 
     Plug 'sbdchd/neoformat'
-
-    Plug 'liuchengxu/vim-which-key'
-
     Plug 'jiangmiao/auto-pairs'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-commentary'
@@ -75,3 +75,5 @@ augroup end
 
 autocmd WinEnter,TabEnter,FocusGained * checktime
 
+" ========== Others ==========
+let g:rg_command = 'rg --vimgrep -S'
