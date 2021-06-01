@@ -41,8 +41,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'dracula/vim', { 'as': 'dracula' }
 
     Plug 'kyazdani42/nvim-web-devicons'
-    " Plug 'kyazdani42/nvim-tree.lua'
-    Plug 'sindrets/nvim-tree.lua', { 'branch': 'feat/window-picker' }
+    Plug 'kyazdani42/nvim-tree.lua'
 
     Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
     Plug 'folke/which-key.nvim'
