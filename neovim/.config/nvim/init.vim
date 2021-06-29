@@ -76,3 +76,6 @@ autocmd WinEnter,TabEnter,FocusGained * checktime
 
 " ========== Others ==========
 let g:rg_command = 'rg --vimgrep -S'
+
+set inccommand=split
+

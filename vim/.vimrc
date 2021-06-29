@@ -29,7 +29,6 @@ set wildmenu
 set shortmess+=c
 set path+=**
 set clipboard=unnamedplus
-set inccommand=split
 
 " ===== Window =====
 set number relativenumber
