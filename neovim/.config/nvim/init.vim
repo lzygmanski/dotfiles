@@ -46,6 +46,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
     Plug 'folke/which-key.nvim'
 
+    Plug 'airblade/vim-rooter'
     Plug 'sbdchd/neoformat'
     Plug 'jiangmiao/auto-pairs'
     Plug 'tpope/vim-surround'
