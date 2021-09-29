@@ -1,1 +1,1 @@
-vim.g.rooter_patterns = {'package.json'}
+-- vim.g.rooter_patterns = {'package.json'}
