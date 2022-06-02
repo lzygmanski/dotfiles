@@ -9,8 +9,6 @@ require'nvim-tree'.setup {
     open_on_setup = false,
     -- will not open on setup if the filetype is in this list
     ignore_ft_on_setup = {},
-    -- closes neovim automatically when the tree is the last **WINDOW** in the view
-    auto_close = false,
     -- opens the tree when changing/opening a new tab if the tree wasn't previously opened
     open_on_tab = false,
     -- hijack the cursor in the tree to put it at the start of the filename
@@ -18,7 +16,10 @@ require'nvim-tree'.setup {
     -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
     update_cwd = false,
     -- show lsp diagnostics in the signcolumn
-    lsp_diagnostics = false,
+    diagnostics = {
+        enable = true,
+        icons = {hint = "", info = "", warning = "", error = ""}
+    },
     -- update the focused file on `BufEnter`, un-collapses the folders recursively until it finds the file
     update_focused_file = {
         -- enables the feature
@@ -52,7 +53,10 @@ require'nvim-tree'.setup {
             -- list of mappings to set on the tree manually
             list = {{key = "l", cb = tree_cb("edit")}, {key = "h", cb = tree_cb("close_node")}}
         }
-    }
+    },
+
+    filters = {dotfiles = false, custom = {}},
+    git = {enable = true, ignore = false, timeout = 500}
 }
 
 vim.api.nvim_set_keymap('n', '<Leader>b', ':NvimTreeToggle<CR>', {noremap = true, silent = true})

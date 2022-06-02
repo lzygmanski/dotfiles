@@ -1,4 +1,4 @@
-require('plugins.compe');
+require('plugins.cmp');
 require('plugins.galaxyline');
 require('plugins.git_worktree');
 require('plugins.maximizer');

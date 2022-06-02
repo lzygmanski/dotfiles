@@ -13,8 +13,15 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'euclidianAce/BetterLua.vim'
     Plug 'jparise/vim-graphql'
 
-    Plug 'hrsh7th/nvim-compe'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/cmp-cmdline'
+    Plug 'hrsh7th/nvim-cmp'
+
+    Plug 'hrsh7th/cmp-vsnip'
     Plug 'hrsh7th/vim-vsnip'
+
     Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 
     Plug 'nvim-lua/popup.nvim'
@@ -43,7 +50,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'kyazdani42/nvim-tree.lua'
 
-    Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+    Plug 'NTBBloodbath/galaxyline.nvim' , {'branch': 'main'}
     Plug 'folke/which-key.nvim'
 
     Plug 'airblade/vim-rooter'

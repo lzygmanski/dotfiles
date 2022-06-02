@@ -1,6 +1,6 @@
 local on_attach = require('lsp.on_attach')
 
-require'lspconfig/configs'.emmet_ls = {
+require'lspconfig.configs'.emmet_ls = {
     default_config = {
         cmd = {'emmet-ls', '--stdio'},
         filetypes = {
