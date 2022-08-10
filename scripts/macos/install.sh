@@ -4,7 +4,8 @@
 
 brew install wget
 brew install stow
-brew install neofetch
+# brew install neofetch
+brew install pfetch
 
 brew install python
 brew install luajit

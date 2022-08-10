@@ -4,6 +4,8 @@ sudo pacman -Syy
 
 sudo pacman -S --noconfirm cmake
 sudo pacman -S --noconfirm wget stow neofetch
+# sudo pacman -S --noconfirm neofetch
+sudo pacman -S --noconfirm pfetch
 sudo pacman -S --noconfirm python luajit ninja go luarocks
 sudo pacman -S --noconfirm shellcheck shfmt
 #sudo pacman -S --noconfirm vim neovim python-pynvim
