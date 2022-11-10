@@ -18,6 +18,14 @@ require 'lsp.emmet'
 require 'lsp.json'
 require 'lsp.yml'
 
+-- Mappings.
+-- See `:help vim.diagnostic.*` for documentation on any of the below functions
+local opts = {noremap = true, silent = true}
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+
 vim.api.nvim_exec([[
     sign define LspDiagnosticsSignError text=綠 texthl=LspDiagnosticsSignError linehl= numhl=
     sign define LspDiagnosticsSignWarning text=綠 texthl=LspDiagnosticsSignWarning linehl= numhl=

@@ -6,7 +6,13 @@ export PATH=$HOME/.luarocks/bin:$PATH
 
 case "$OSTYPE" in
   darwin*)
+    export PATH="/usr/local/opt/python@3.9/libexec/bin:$PATH"
+
     export PATH="/usr/local/opt/ruby/bin:$PATH"
+    export JAVA_HOME="/usr/libexec/java_home"
+
+    export PNPM_HOME="/Users/lzygmanski/Library/pnpm"
+    export PATH="$PNPM_HOME:$PATH"
   ;;
   linux*)
     export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
@@ -40,4 +46,3 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH="/usr/local/opt/python@3.9/libexec/bin:$PATH"

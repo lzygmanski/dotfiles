@@ -65,6 +65,7 @@ let mapleader=" "
 map <leader>ve :vsp $MYVIMRC<CR>
 map <leader>vs :source $MYVIMRC<CR>
 
+xnoremap <leader>p "_dP
 " ========== Custom commands ==========
 command! MakeTags !ctags -R .
 
