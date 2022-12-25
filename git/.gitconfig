@@ -10,7 +10,7 @@
 [pull]
 	rebase = true
 [core]
-    editor = vim
+	editor = /usr/bin/vi
     ignorecase = false
 [filter "lfs"]
 	required = true

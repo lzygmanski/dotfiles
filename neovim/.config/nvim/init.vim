@@ -24,6 +24,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'hrsh7th/vim-vsnip-integ'
 
     Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
+    Plug 'rafamadriz/friendly-snippets'
 
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'

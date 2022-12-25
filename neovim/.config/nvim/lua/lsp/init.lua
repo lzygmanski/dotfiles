@@ -5,7 +5,7 @@ local on_attach_no_format = require 'lsp.on_attach_no_format'
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local servers = {"dockerls", "pyright", "vimls"}
-local servers_no_format = {"bashls", "cssls", "graphql", "html", "vuels", "tsserver"}
+local servers_no_format = {"bashls", "cssls", "graphql", "html", "vuels", "tsserver", "tailwindcss"}
 
 for _, lsp in ipairs(servers) do nvim_lsp[lsp].setup {on_attach = on_attach} end
 for _, lsp in ipairs(servers_no_format) do nvim_lsp[lsp].setup {on_attach = on_attach_no_format} end
