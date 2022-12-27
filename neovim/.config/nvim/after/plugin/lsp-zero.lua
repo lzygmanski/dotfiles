@@ -1,7 +1,10 @@
 local lsp = require("lsp-zero")
 local cmp = require("cmp")
 local lspkind = require("lspkind")
+local schemastore = require("schemastore")
 local neodev = require("neodev")
+
+local schemas = schemastore.json.schemas()
 
 neodev.setup()
 
@@ -81,48 +84,7 @@ end)
 lsp.configure("jsonls", {
 	settings = {
 		json = {
-			schemas = {
-				{
-					description = "TypeScript compiler configuration file",
-					fileMatch = { "tsconfig.json", "tsconfig.*.json" },
-					url = "https://json.schemastore.org/tsconfig",
-				},
-				{
-					description = "Lerna config",
-					fileMatch = { "lerna.json" },
-					url = "https://json.schemastore.org/lerna",
-				},
-				{
-					description = "Babel configuration",
-					fileMatch = { ".babelrc.json", ".babelrc", "babel.config.json" },
-					url = "https://json.schemastore.org/lerna",
-				},
-				{
-					description = "ESLint config",
-					fileMatch = { ".eslintrc.json", ".eslintrc" },
-					url = "https://json.schemastore.org/eslintrc",
-				},
-				{
-					description = "Prettier config",
-					fileMatch = { ".prettierrc", ".prettierrc.json", "prettier.config.json" },
-					url = "https://json.schemastore.org/prettierrc",
-				},
-				{
-					description = "Vercel Now config",
-					fileMatch = { "now.json" },
-					url = "https://json.schemastore.org/now",
-				},
-				{
-					description = "Stylelint config",
-					fileMatch = { ".stylelintrc", ".stylelintrc.json", "stylelint.config.json" },
-					url = "https://json.schemastore.org/stylelintrc",
-				},
-				{
-					description = "Package config",
-					fileMatch = { "package.json" },
-					url = "https://json.schemastore.org/package.json",
-				},
-			},
+			schemas = schemas,
 		},
 	},
 })
@@ -130,15 +92,7 @@ lsp.configure("jsonls", {
 lsp.configure("yamlls", {
 	settings = {
 		yaml = {
-			schemas = {
-				["https://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
-				["https://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
-				["https://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",
-				["https://json.schemastore.org/prettierrc"] = ".prettierrc.{yml,yaml}",
-				["https://json.schemastore.org/stylelintrc"] = ".stylelintrc.{yml,yaml}",
-				["https://json.schemastore.org/circleciconfig"] = ".circleci/**/*.{yml,yaml}",
-				["https://json.schemastore.org/gitlab-ci.json"] = ".gitlab-ci.{yml,yaml}",
-			},
+			schemas = schemas,
 		},
 	},
 })

@@ -25,6 +25,7 @@ return require("packer").startup(function(use)
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
 	use("windwp/nvim-autopairs")
 
+	use("b0o/schemastore.nvim")
 	use({
 		"VonHeikemen/lsp-zero.nvim",
 		requires = {
