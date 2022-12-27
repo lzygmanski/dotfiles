@@ -167,3 +167,7 @@ local cmp_config = lsp.defaults.cmp_config({
 })
 
 cmp.setup(cmp_config)
+
+vim.diagnostic.config({
+	virtual_text = { spacing = 0, prefix = "!" },
+})
