@@ -23,6 +23,7 @@ return require("packer").startup(function(use)
 
 	use({ "nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" } })
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
+	use("windwp/nvim-autopairs")
 
 	use({
 		"VonHeikemen/lsp-zero.nvim",

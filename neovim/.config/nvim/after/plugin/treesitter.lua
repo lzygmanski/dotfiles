@@ -8,4 +8,8 @@ require("nvim-treesitter.configs").setup({
 	highlight = {
 		enable = true,
 	},
+	indent = {
+		enable = false,
+	},
+	additional_vim_regex_highlighting = false,
 })
