@@ -22,6 +22,7 @@ mason_null_ls.setup({
 
 null_ls.setup({
 	sources = {
+		formatting.eslint_d,
 		formatting.prettierd,
 		formatting.stylua,
 		formatting.shfmt,

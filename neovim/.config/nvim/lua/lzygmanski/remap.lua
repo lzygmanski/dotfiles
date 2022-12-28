@@ -3,7 +3,8 @@ vim.g.mapleader = " "
 --- Global
 vim.opt.updatetime = 50
 vim.opt.mouse = "n"
---- vim.opt.autowriteall = true
+vim.opt.autowriteall = true
+vim.opt.autoread = true
 vim.opt.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<"
 vim.opt.completeopt = "menuone,noinsert,noselect"
 vim.opt.backup = false
@@ -44,9 +45,17 @@ vim.g.rg_command = "rg --vimgrep -S"
 vim.keymap.set("x", "<leader>p", '"_dP', { noremap = true })
 
 --- Aucmd
-local MYAUCMDS = vim.api.nvim_create_augroup("MYAUCMDS", { clear = true })
+local custom_au_cmd_group = vim.api.nvim_create_augroup("CustomAuCmd", { clear = true })
 vim.api.nvim_create_autocmd(
 	{ "TextYankPost" },
-	{ group = MYAUCMDS, pattern = "*", command = [[silent! lua vim.highlight.on_yank()]] }
+	{ group = custom_au_cmd_group, pattern = "*", command = [[silent! lua vim.highlight.on_yank()]] }
 )
-vim.api.nvim_create_autocmd({ "BufWritePre" }, { group = MYAUCMDS, pattern = "*", command = [[:%s/\s\+$//e]] })
+vim.api.nvim_create_autocmd(
+	{ "BufWritePre" },
+	{ group = custom_au_cmd_group, pattern = "*", command = [[:%s/\s\+$//e]] }
+)
+
+vim.api.nvim_create_autocmd(
+	{ "CursorHold", "CursorHoldI", "FocusGained", "BufEnter" },
+	{ group = custom_au_cmd_group, pattern = "*", command = [[:checktime]] }
+)
