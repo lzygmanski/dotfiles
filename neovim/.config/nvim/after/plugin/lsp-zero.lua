@@ -10,7 +10,7 @@ neodev.setup()
 
 lsp.preset("recommended")
 lsp.ensure_installed({
-	"sumneko_lua",
+	"lua_ls",
 	"jsonls",
 	"emmet_ls",
 	"yamlls",

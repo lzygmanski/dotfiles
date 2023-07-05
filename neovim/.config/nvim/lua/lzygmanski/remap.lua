@@ -43,6 +43,7 @@ vim.g.rg_command = "rg --vimgrep -S"
 
 --- Keys
 vim.keymap.set("x", "<leader>p", '"_dP', { noremap = true })
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
 
 --- Aucmd
 local custom_au_cmd_group = vim.api.nvim_create_augroup("CustomAuCmd", { clear = true })

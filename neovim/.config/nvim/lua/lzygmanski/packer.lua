@@ -12,12 +12,13 @@ return require("packer").startup(function(use)
 
 	use("folke/which-key.nvim")
 
-	use("tpope/vim-fugitive")
 	use("tpope/vim-surround")
 	use("tpope/vim-commentary")
+	use("tpope/vim-fugitive")
 
-	use("lewis6991/gitsigns.nvim")
 	use("rbong/vim-flog")
+	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
+	use("lewis6991/gitsigns.nvim")
 
 	use("ThePrimeagen/vim-be-good")
 
