@@ -1,6 +1,5 @@
 local lsp = require("lsp-zero")
 local cmp = require("cmp")
-local lspkind = require("lspkind")
 local schemastore = require("schemastore")
 local neodev = require("neodev")
 
@@ -113,13 +112,24 @@ lsp.configure("sumneko_lua", {
 lsp.setup()
 
 local cmp_config = lsp.defaults.cmp_config({
-	formatting = {
-		format = lspkind.cmp_format({
-			mode = "symbol_text",
-		}),
+	sources = {
+		{ name = "nvim_lsp" },
+		{ name = "nvim_lua" },
+		{ name = "luasnip" },
+		{ name = "vsnip" },
+		{ name = "buffer" },
+		{ name = "path" },
+		{ name = "npm", keyword_length = 4 },
+	},
+	window = {
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
 	},
 })
 
+require("cmp-npm").setup({})
+require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_snipmate").lazy_load()
 cmp.setup(cmp_config)
 
 vim.diagnostic.config({

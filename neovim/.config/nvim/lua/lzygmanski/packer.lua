@@ -46,6 +46,7 @@ return require("packer").startup(function(use)
 			-- Snippets
 			{ "L3MON4D3/LuaSnip" },
 			{ "rafamadriz/friendly-snippets" },
+			{ "honza/vim-snippets" },
 		},
 	})
 	use("onsails/lspkind.nvim")
@@ -67,4 +68,11 @@ return require("packer").startup(function(use)
 	use("jayp0521/mason-null-ls.nvim")
 
 	use("folke/neodev.nvim")
+
+	use({
+		"David-Kunz/cmp-npm",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+	})
 end)

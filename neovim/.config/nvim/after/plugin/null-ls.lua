@@ -16,6 +16,7 @@ mason_null_ls.setup({
 		"flake8",
 		"shfmt",
 		"shellcheck",
+		"codelldb",
 	},
 	automatic_installation = true,
 })
@@ -30,7 +31,6 @@ null_ls.setup({
 		diagnostics.flake8,
 		diagnostics.luacheck,
 		diagnostics.shellcheck,
-
 		completion.spell,
 	},
 	on_attach = function(current_client, bufnr)

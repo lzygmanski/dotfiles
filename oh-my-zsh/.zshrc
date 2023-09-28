@@ -12,7 +12,10 @@ case "$OSTYPE" in
     export JAVA_HOME="/usr/libexec/java_home"
 
     export PNPM_HOME="/Users/lzygmanski/Library/pnpm"
-    export PATH="$PNPM_HOME:$PATH"
+    case ":$PATH:" in
+      *":$PNPM_HOME:"*) ;;
+      *) export PATH="$PNPM_HOME:$PATH" ;;
+    esac
   ;;
   linux*)
     export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
