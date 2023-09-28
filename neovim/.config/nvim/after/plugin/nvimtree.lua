@@ -19,6 +19,7 @@ require("nvim-tree").setup({
 			list = {
 				{ key = "l", cb = tree_cb("edit") },
 				{ key = "h", cb = tree_cb("close_node") },
+				{ key = "<esc>", cb = vim.cmd.NvimTreeToggle },
 			},
 		},
 		float = {
@@ -40,7 +41,7 @@ require("nvim-tree").setup({
 			enable = true,
 		},
 		icons = {
-			git_placement = "after",
+			git_placement = "signcolumn",
 		},
 	},
 	update_focused_file = {
