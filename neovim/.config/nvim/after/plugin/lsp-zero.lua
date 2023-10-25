@@ -1,31 +1,11 @@
-local lsp = require("lsp-zero")
-local cmp = require("cmp")
+local lsp_zero = require("lsp-zero")
 local schemastore = require("schemastore")
-local neodev = require("neodev")
+local cmp = require("cmp")
+local lspkind = require("lspkind")
 
-local schemas = schemastore.json.schemas()
+lsp_zero.preset("recommended")
 
-neodev.setup()
-
-lsp.preset("recommended")
-lsp.ensure_installed({
-	"lua_ls",
-	"jsonls",
-	"emmet_ls",
-	"yamlls",
-	"dockerls",
-	"pyright",
-	"vimls",
-	"bashls",
-	"cssls",
-	"graphql",
-	"html",
-	"vuels",
-	"tsserver",
-	"tailwindcss",
-})
-
-lsp.set_preferences({
+lsp_zero.set_preferences({
 	sign_icons = {
 		hint = "",
 		info = "",
@@ -34,8 +14,10 @@ lsp.set_preferences({
 	},
 })
 
-lsp.on_attach(function(client, buffer)
+lsp_zero.on_attach(function(client, buffer)
 	local opts = { buffer = buffer, remap = false }
+
+	lsp_zero.default_keymaps({ buffer = buffer })
 
 	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -80,7 +62,9 @@ lsp.on_attach(function(client, buffer)
 	end
 end)
 
-lsp.configure("jsonls", {
+local schemas = schemastore.json.schemas()
+
+lsp_zero.configure("jsonls", {
 	settings = {
 		json = {
 			schemas = schemas,
@@ -88,7 +72,7 @@ lsp.configure("jsonls", {
 	},
 })
 
-lsp.configure("yamlls", {
+lsp_zero.configure("yamlls", {
 	settings = {
 		yaml = {
 			schemas = schemas,
@@ -96,7 +80,7 @@ lsp.configure("yamlls", {
 	},
 })
 
-lsp.configure("sumneko_lua", {
+lsp_zero.configure("sumneko_lua", {
 	settings = {
 		Lua = {
 			completion = {
@@ -109,9 +93,9 @@ lsp.configure("sumneko_lua", {
 	},
 })
 
-lsp.setup()
+lsp_zero.setup()
 
-local cmp_config = lsp.defaults.cmp_config({
+local cmp_config = lsp_zero.defaults.cmp_config({
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
@@ -119,19 +103,20 @@ local cmp_config = lsp.defaults.cmp_config({
 		{ name = "vsnip" },
 		{ name = "buffer" },
 		{ name = "path" },
-		{ name = "npm", keyword_length = 4 },
 	},
 	window = {
 		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered(),
 	},
+	formatting = {
+		format = lspkind.cmp_format({
+			maxwidth = 50,
+			ellipsis_char = "...",
+		}),
+	},
 })
 
-require("cmp-npm").setup({})
 require("luasnip.loaders.from_vscode").lazy_load()
 require("luasnip.loaders.from_snipmate").lazy_load()
-cmp.setup(cmp_config)
 
-vim.diagnostic.config({
-	virtual_text = { spacing = 0, prefix = "!" },
-})
+cmp.setup(cmp_config)

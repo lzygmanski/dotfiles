@@ -6,6 +6,8 @@ return require("packer").startup(function(use)
 
 	use({ "dracula/vim", as = "dracula" })
 
+	use("ThePrimeagen/vim-be-good")
+
 	use("editorconfig/editorconfig-vim")
 	use("jremmen/vim-ripgrep")
 	use("mbbill/undotree")
@@ -17,23 +19,27 @@ return require("packer").startup(function(use)
 	use("tpope/vim-fugitive")
 
 	use("rbong/vim-flog")
-	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 	use("lewis6991/gitsigns.nvim")
+	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 
-	use("ThePrimeagen/vim-be-good")
-
-	use({ "nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" } })
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = ":TSUpdate",
+	})
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
-	use("windwp/nvim-autopairs")
+	use({ "windwp/nvim-autopairs" })
 
 	use("b0o/schemastore.nvim")
+
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
+	use("WhoIsSethDaniel/mason-tool-installer.nvim")
+
 	use({
 		"VonHeikemen/lsp-zero.nvim",
 		requires = {
-			-- LSP Support
+			-- Lsp Support
 			{ "neovim/nvim-lspconfig" },
-			{ "williamboman/mason.nvim" },
-			{ "williamboman/mason-lspconfig.nvim" },
 
 			-- Autocompletion
 			{ "hrsh7th/nvim-cmp" },
@@ -49,11 +55,20 @@ return require("packer").startup(function(use)
 			{ "honza/vim-snippets" },
 		},
 	})
+
+	use("stevearc/dressing.nvim")
+
+	-- Formatter
+	use("stevearc/conform.nvim")
+
+	-- Linter
+	use("mfussenegger/nvim-lint")
+
 	use("onsails/lspkind.nvim")
+
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.0",
-		requires = { { "nvim-lua/plenary.nvim" } },
+		requires = "nvim-lua/plenary.nvim",
 	})
 
 	use({
@@ -64,15 +79,5 @@ return require("packer").startup(function(use)
 		tag = "nightly",
 	})
 
-	use("jose-elias-alvarez/null-ls.nvim")
-	use("jayp0521/mason-null-ls.nvim")
-
 	use("folke/neodev.nvim")
-
-	use({
-		"David-Kunz/cmp-npm",
-		requires = {
-			"nvim-lua/plenary.nvim",
-		},
-	})
 end)

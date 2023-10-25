@@ -9,7 +9,7 @@ vim.opt.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<"
 vim.opt.completeopt = "menuone,noinsert,noselect"
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -34,7 +34,7 @@ vim.opt.smartindent = true
 
 vim.opt.swapfile = false
 vim.opt.undofile = true
-vim.opt.spelllang = "en"
+vim.opt.spelllang = "en_us"
 vim.opt.complete = ".,w,b,u,t,i,kspell"
 vim.opt.omnifunc = "syntaxcomplete#Complete"
 

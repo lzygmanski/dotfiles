@@ -38,7 +38,7 @@ set cursorline
 set scrolloff=8
 set colorcolumn=100
 set signcolumn=yes
-"set spell
+set spell
 
 " ===== Buffer =====
 set tabstop=4
