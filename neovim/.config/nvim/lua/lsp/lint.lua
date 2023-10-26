@@ -20,5 +20,14 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave", "TextCh
 -- Customize diagnostics
 
 vim.diagnostic.config({
-	virtual_text = { spacing = 0, prefix = "!" },
+	-- virtual_text = { spacing = 0, prefix = "!" },
+	virtual_text = false,
 })
+
+-- vim.api.nvim_create_autocmd({ "CursorHold" }, {
+-- 	callback = function()
+-- 		if vim.lsp.buf.server_ready() then
+-- 			vim.diagnostic.open_float()
+-- 		end
+-- 	end,
+-- })
