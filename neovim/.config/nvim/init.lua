@@ -1,1 +1,2 @@
-require("lzygmanski")
+require("core")
+require("lsp")

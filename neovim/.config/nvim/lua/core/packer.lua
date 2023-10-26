@@ -56,7 +56,8 @@ return require("packer").startup(function(use)
 		},
 	})
 
-	use("stevearc/dressing.nvim")
+	-- TODO replace to other supported package - need for spell code action
+	use("jose-elias-alvarez/null-ls.nvim")
 
 	-- Formatter
 	use("stevearc/conform.nvim")
@@ -64,6 +65,7 @@ return require("packer").startup(function(use)
 	-- Linter
 	use("mfussenegger/nvim-lint")
 
+	use("stevearc/dressing.nvim")
 	use("onsails/lspkind.nvim")
 
 	use({

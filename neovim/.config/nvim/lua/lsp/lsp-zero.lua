@@ -1,7 +1,5 @@
 local lsp_zero = require("lsp-zero")
 local schemastore = require("schemastore")
-local cmp = require("cmp")
-local lspkind = require("lspkind")
 
 lsp_zero.preset("recommended")
 
@@ -94,29 +92,3 @@ lsp_zero.configure("sumneko_lua", {
 })
 
 lsp_zero.setup()
-
-local cmp_config = lsp_zero.defaults.cmp_config({
-	sources = {
-		{ name = "nvim_lsp" },
-		{ name = "nvim_lua" },
-		{ name = "luasnip" },
-		{ name = "vsnip" },
-		{ name = "buffer" },
-		{ name = "path" },
-	},
-	window = {
-		completion = cmp.config.window.bordered(),
-		documentation = cmp.config.window.bordered(),
-	},
-	formatting = {
-		format = lspkind.cmp_format({
-			maxwidth = 50,
-			ellipsis_char = "...",
-		}),
-	},
-})
-
-require("luasnip.loaders.from_vscode").lazy_load()
-require("luasnip.loaders.from_snipmate").lazy_load()
-
-cmp.setup(cmp_config)

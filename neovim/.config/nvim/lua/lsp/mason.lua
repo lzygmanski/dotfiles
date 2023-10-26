@@ -10,7 +10,7 @@ mason_lspconfig.setup({
 		lsp_zero.default_setup,
 	},
 	ensure_installed = {
-		-- Lsp config names
+		-- Lsp
 		"lua_ls",
 		"jsonls",
 		"emmet_ls",
@@ -25,6 +25,9 @@ mason_lspconfig.setup({
 		"vuels",
 		"tsserver",
 		"tailwindcss",
+
+		-- Linter
+		"eslint",
 	},
 	automatic_installation = true,
 })
@@ -33,13 +36,14 @@ mason_tool_installer.setup({
 	ensure_installed = {
 		-- DAP
 		"codelldb",
+
 		-- Linter
 		"shellcheck",
 		"luacheck",
 		"flake8",
-		"eslint_d",
 		"codespell",
 		"cspell",
+
 		-- Formatter
 		"prettierd",
 		"stylua",

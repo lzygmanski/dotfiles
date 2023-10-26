@@ -13,12 +13,12 @@ conform.setup({
 		yaml = { "prettier" },
 		markdown = { "prettier" },
 		graphql = { "prettier" },
+		python = { "prettier" },
 		lua = { "stylua" },
-		python = { "isort", "black" },
 	},
 	format_on_save = {
-		lsp_fallback = true,
 		async = false,
-		timeout_ms = 1000,
+		timeout_ms = 500,
+		lsp_fallback = true,
 	},
 })
