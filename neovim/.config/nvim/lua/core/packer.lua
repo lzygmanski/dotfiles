@@ -58,6 +58,7 @@ return require("packer").startup(function(use)
 
 	-- TODO replace to other supported package - need for spell code action
 	use("jose-elias-alvarez/null-ls.nvim")
+	use("davidmh/cspell.nvim")
 
 	-- Formatter
 	use("stevearc/conform.nvim")

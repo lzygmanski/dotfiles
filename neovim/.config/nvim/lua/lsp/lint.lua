@@ -3,14 +3,9 @@ local nvim_lint = require("lint")
 -- eslint is added by mason-lspconfig
 
 nvim_lint.linters_by_ft = {
-	javascript = { "cspell" },
-	typescript = { "cspell" },
-	javascriptreact = { "cspell" },
-	typescriptreact = { "cspell" },
-	svelte = { "cspell" },
-	lua = { "luacheck", "cspell" },
-	python = { "flake8", "cspell" },
-	sh = { "bashls", "cspell" },
+	lua = { "luacheck" },
+	python = { "flake8" },
+	sh = { "bashls" },
 }
 
 local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
