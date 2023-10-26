@@ -41,7 +41,6 @@ mason_tool_installer.setup({
 		"shellcheck",
 		"luacheck",
 		"flake8",
-		"codespell",
 		"cspell",
 
 		-- Formatter

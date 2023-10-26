@@ -5,8 +5,8 @@ lsp_zero.preset("recommended")
 
 lsp_zero.set_preferences({
 	sign_icons = {
-		hint = "",
-		info = "",
+		hint = "󰋗",
+		info = "󰋼",
 		warn = "",
 		error = "",
 	},
