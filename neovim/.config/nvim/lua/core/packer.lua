@@ -4,33 +4,37 @@ return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
-	use({ "dracula/vim", as = "dracula" })
-
+	-- Vim Learning
 	use("ThePrimeagen/vim-be-good")
 
+	-- General Helpers
 	use("editorconfig/editorconfig-vim")
 	use("jremmen/vim-ripgrep")
 	use("mbbill/undotree")
-
 	use("folke/which-key.nvim")
-
 	use("tpope/vim-surround")
 	use("tpope/vim-commentary")
-	use("tpope/vim-fugitive")
 
+	-- Git
+	use("tpope/vim-fugitive")
+	use("tpope/vim-rhubarb")
 	use("rbong/vim-flog")
 	use("lewis6991/gitsigns.nvim")
 	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 
+	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
+	use({ "nvim-treesitter/nvim-treesitter-textobjects" })
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
 	use({ "windwp/nvim-autopairs" })
 
+	-- JSON & YML schema source
 	use("b0o/schemastore.nvim")
 
+	-- LSP
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 	use("WhoIsSethDaniel/mason-tool-installer.nvim")
@@ -66,9 +70,12 @@ return require("packer").startup(function(use)
 	-- Linter
 	use("mfussenegger/nvim-lint")
 
+	-- Visual & Theme
+	use({ "dracula/vim", as = "dracula" })
 	use("stevearc/dressing.nvim")
 	use("onsails/lspkind.nvim")
 
+	-- File finders / tree
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = "nvim-lua/plenary.nvim",
@@ -82,5 +89,9 @@ return require("packer").startup(function(use)
 		tag = "nightly",
 	})
 
+	-- Symbols tree
+	use("simrat39/symbols-outline.nvim")
+
+	-- Nvim dev tools helpers
 	use("folke/neodev.nvim")
 end)

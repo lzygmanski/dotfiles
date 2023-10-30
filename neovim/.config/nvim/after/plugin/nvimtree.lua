@@ -1,7 +1,7 @@
 local tree_cb = require("nvim-tree.config").nvim_tree_callback
 
-local gheight = vim.api.nvim_list_uis()[1].height
-local gwidth = vim.api.nvim_list_uis()[1].width
+local g_height = vim.api.nvim_list_uis()[1].height
+local g_width = vim.api.nvim_list_uis()[1].width
 local width = 100
 local height = 30
 
@@ -28,8 +28,8 @@ require("nvim-tree").setup({
 				relative = "editor",
 				width = width,
 				height = height,
-				row = (gheight - height) * 0.5,
-				col = (gwidth - width) * 0.5,
+				row = (g_height - height) * 0.5,
+				col = (g_width - width) * 0.5,
 			},
 		},
 	},
