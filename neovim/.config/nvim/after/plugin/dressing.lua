@@ -1,3 +1,3 @@
 local dressing = require("dressing")
 
-dressing.setup({})
+dressing.setup()

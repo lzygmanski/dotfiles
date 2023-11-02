@@ -7,7 +7,7 @@ vim.keymap.set("n", "<leader>?", builtin.oldfiles, { desc = "[?] Find recently o
 vim.keymap.set("n", "<leader><space>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 vim.keymap.set("n", "<leader>p", function()
 	builtin.find_files({ hidden = true })
-end, {})
+end, { desc = "Find files" })
 
 vim.keymap.set("n", "<leader>gf", builtin.git_files, { desc = "[G]it [F]iles" })
 vim.keymap.set("n", "<leader>gs", builtin.git_status, { desc = "[G]it [S]tatus" })

@@ -59,6 +59,6 @@ require("nvim-tree").setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>b", vim.cmd.NvimTreeToggle, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>b", vim.cmd.NvimTreeToggle, { noremap = true, silent = true, desc = "Nvim tree" })
 
 vim.cmd("autocmd FileType LuaTree setlocal nowrap")

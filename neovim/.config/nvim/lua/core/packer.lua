@@ -15,6 +15,8 @@ return require("packer").startup(function(use)
 	use("tpope/vim-surround")
 	use("tpope/vim-commentary")
 
+	use("rcarriga/nvim-notify")
+
 	-- Git
 	use("tpope/vim-fugitive")
 	use("tpope/vim-rhubarb")

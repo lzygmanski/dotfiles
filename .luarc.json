@@ -1,8 +1,10 @@
 {
-    "workspace.library": [
-        "/Users/lzygmanski/.local/share/nvim/site/pack/packer/start/neodev.nvim/types/nightly",
-        "/usr/local/Cellar/neovim/HEAD-1f8fb7c/share/nvim/runtime/lua",
-        "/Users/lzygmanski/.dotfiles/neovim/.config/nvim/lua",
-        "${3rd}/luv/library"
-    ]
+  "workspace.library": [
+    "/Users/lzygmanski/.local/share/nvim/site/pack/packer/start/neodev.nvim/types/nightly",
+    "/Users/lzygmanski/.local/share/nvim/site/pack/packer/start/*/*",
+    "/usr/local/Cellar/neovim/HEAD-1f8fb7c/share/nvim/runtime/lua",
+    "/Users/lzygmanski/.dotfiles/neovim/.config/nvim/lua",
+    "${3rd}/luv/library",
+    "${3rd}/luassert/library"
+  ]
 }

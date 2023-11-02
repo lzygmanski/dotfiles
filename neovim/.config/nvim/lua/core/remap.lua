@@ -12,7 +12,7 @@ vim.opt.ignorecase = true
 vim.opt.inccommand = "split"
 vim.opt.incsearch = true
 vim.opt.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<"
-vim.opt.mouse = "n"
+vim.opt.mouse = ""
 vim.opt.smartcase = true
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.updatetime = 50
@@ -44,8 +44,8 @@ vim.opt.undofile = true
 vim.g.rg_command = "rg --vimgrep -S"
 
 --- Keys
-vim.keymap.set("x", "<leader>p", '"_dP', { noremap = true })
-vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
+vim.keymap.set("x", "<leader>p", '"_dP', { noremap = true, desc = "Replace without overwriting registry" })
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { noremap = true, silent = true, desc = "Esc from terminal mode" })
 
 --- Aucmd
 local custom_au_cmd_group = vim.api.nvim_create_augroup("CustomAuCmd", { clear = true })
