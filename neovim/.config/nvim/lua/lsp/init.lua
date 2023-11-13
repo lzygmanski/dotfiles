@@ -1,7 +1,0 @@
-require("neodev")
-require("lsp.lsp-zero")
-require("lsp.cmp")
-require("lsp.mason")
-require("lsp.null-ls")
-require("lsp.lint")
-require("lsp.conform")

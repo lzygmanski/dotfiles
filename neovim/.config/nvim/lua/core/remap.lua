@@ -35,7 +35,6 @@ vim.opt.softtabstop = 4
 vim.opt.tabstop = 4
 
 vim.opt.complete = ".,w,b,u,t,i,kspell"
-vim.opt.omnifunc = "syntaxcomplete#Complete"
 vim.opt.spelllang = "en_us"
 vim.opt.swapfile = false
 vim.opt.undofile = true
@@ -50,15 +49,15 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { noremap = true, silent = true
 --- Aucmd
 local custom_au_cmd_group = vim.api.nvim_create_augroup("CustomAuCmd", { clear = true })
 vim.api.nvim_create_autocmd(
-	{ "TextYankPost" },
-	{ group = custom_au_cmd_group, pattern = "*", command = [[silent! lua vim.highlight.on_yank()]] }
+    { "TextYankPost" },
+    { group = custom_au_cmd_group, pattern = "*", command = [[silent! lua vim.highlight.on_yank()]] }
 )
 vim.api.nvim_create_autocmd(
-	{ "BufWritePre" },
-	{ group = custom_au_cmd_group, pattern = "*", command = [[:%s/\s\+$//e]] }
+    { "BufWritePre" },
+    { group = custom_au_cmd_group, pattern = "*", command = [[:%s/\s\+$//e]] }
 )
 
 vim.api.nvim_create_autocmd(
-	{ "CursorHold", "CursorHoldI", "FocusGained", "BufEnter" },
-	{ group = custom_au_cmd_group, pattern = "*", command = [[:checktime]] }
+    { "CursorHold", "CursorHoldI", "FocusGained", "BufEnter" },
+    { group = custom_au_cmd_group, pattern = "*", command = [[:checktime]] }
 )
