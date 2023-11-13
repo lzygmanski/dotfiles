@@ -1,3 +1,4 @@
+require("neodev")
 require("lsp.lsp-zero")
 require("lsp.cmp")
 require("lsp.mason")
