@@ -7,9 +7,7 @@ MY_DIR="$(
 
 cd $MY_DIR/../..
 stow --no-folding -v -R -t $HOME \
-    cspell \
 	git \
 	vim \
-	neovim \
 	tmux \
 	oh-my-zsh
