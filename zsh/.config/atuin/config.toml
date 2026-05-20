@@ -1,0 +1,6 @@
+auto_sync = true
+sync_frequency = "1h"
+update_check = false
+style = "compact"
+inline_height = 12
+enter_accept = true
