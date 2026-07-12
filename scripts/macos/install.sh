@@ -4,6 +4,8 @@ if ! command -v brew >/dev/null 2>&1; then
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+brew install --cask warp
+
 brew install git
 brew install wget
 brew install stow
