@@ -27,6 +27,34 @@ Restart the shell:
 exec zsh
 ```
 
+## Ubuntu Server setup
+
+Clone the repository on the server and run the Ubuntu installer:
+
+```sh
+git clone https://github.com/lzygmanski/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+sh scripts/ubuntu.sh
+```
+
+The installer uses `apt` for the server packages, installs the remaining shell
+tools in your home directory, installs NVM, Zinit and the tmux plugin manager,
+and links only the terminal-safe shared configuration. Warp and the macOS themes
+are not installed or linked on Ubuntu. Both x86-64 and ARM64 servers are
+supported.
+
+Make Zsh the login shell, then reconnect over SSH:
+
+```sh
+chsh -s "$(command -v zsh)"
+exit
+```
+
+Existing shared dotfiles are backed up under `~/.dotfiles-backup/` before they
+are linked. Re-running the installer is safe. NVM is loaded automatically by
+Zsh; the current Node.js LTS release and pnpm are installed and configured as
+defaults during setup.
+
 Check the new shell tools:
 
 ```sh

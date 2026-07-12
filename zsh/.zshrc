@@ -1,20 +1,31 @@
-export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
-export PATH="$HOME/go/bin:$PATH"
-export PATH="$HOME/.luarocks/bin:$PATH"
+typeset -U path PATH
+
+path_prepend_if_exists() {
+  [[ -d "$1" ]] && path=("$1" $path)
+}
+
+path_prepend_if_exists "$HOME/bin"
+path_prepend_if_exists "$HOME/.local/bin"
+path_prepend_if_exists "$HOME/.atuin/bin"
+path_prepend_if_exists "/opt/homebrew/bin"
+path_prepend_if_exists "/usr/local/bin"
+path_prepend_if_exists "$HOME/go/bin"
+path_prepend_if_exists "$HOME/.luarocks/bin"
 
 case "$OSTYPE" in
   darwin*)
     if command -v brew >/dev/null 2>&1; then
       BREW_PREFIX="$(brew --prefix)"
-      export PATH="$BREW_PREFIX/opt/python@3.12/libexec/bin:$PATH"
-      export PATH="$BREW_PREFIX/opt/ruby/bin:$PATH"
-      export GRADLE_HOME="$BREW_PREFIX/opt/gradle/libexec"
+      path_prepend_if_exists "$BREW_PREFIX/opt/python@3.12/libexec/bin"
+      path_prepend_if_exists "$BREW_PREFIX/opt/ruby/bin"
+
+      if [ -d "$BREW_PREFIX/opt/gradle/libexec" ]; then
+        export GRADLE_HOME="$BREW_PREFIX/opt/gradle/libexec"
+      fi
 
       if [ -d "$BREW_PREFIX/opt/openjdk/libexec/openjdk.jdk/Contents/Home" ]; then
         export JAVA_HOME="$BREW_PREFIX/opt/openjdk/libexec/openjdk.jdk/Contents/Home"
-        export PATH="$JAVA_HOME/bin:$PATH"
+        path_prepend_if_exists "$JAVA_HOME/bin"
       else
         export JAVA_HOME="$(/usr/libexec/java_home 2>/dev/null)"
       fi
@@ -23,17 +34,16 @@ case "$OSTYPE" in
     fi
 
     export PNPM_HOME="$HOME/Library/pnpm"
-    case ":$PATH:" in
-      *":$PNPM_HOME:"*) ;;
-      *) export PATH="$PNPM_HOME:$PATH" ;;
-    esac
+    path_prepend_if_exists "$PNPM_HOME"
   ;;
   linux*)
     if command -v ruby >/dev/null 2>&1; then
-      export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+      path_prepend_if_exists "$(ruby -e 'puts Gem.user_dir')/bin"
     fi
   ;;
 esac
+
+unfunction path_prepend_if_exists
 
 export EDITOR="nvim"
 export VISUAL="$EDITOR"
@@ -90,7 +100,12 @@ if command -v atuin >/dev/null 2>&1; then
 fi
 
 if command -v fzf >/dev/null 2>&1; then
-  source <(fzf --zsh)
+  if fzf --help 2>&1 | grep -q -- '--zsh'; then
+    source <(fzf --zsh)
+  else
+    [ -r /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
+    [ -r /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
+  fi
 fi
 
 if command -v starship >/dev/null 2>&1; then

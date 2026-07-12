@@ -29,13 +29,10 @@ fi
 backup_file "$HOME/.gitconfig"
 backup_file "$HOME/.tmux.conf"
 backup_file "$HOME/.zshrc"
-backup_file "$HOME/.warp/settings.toml"
-backup_file "$HOME/.warp/themes/dotfiles-dracula.yaml"
 
 cd "$REPO_DIR" || exit 1
 stow --no-folding -v -R -t "$HOME" \
 	git \
 	vim \
 	tmux \
-	zsh \
-	warp
+	zsh
