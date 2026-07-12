@@ -13,6 +13,7 @@ fi
 
 $SUDO apt-get update
 $SUDO env DEBIAN_FRONTEND=noninteractive apt-get install -y \
+	build-essential \
 	ca-certificates \
 	curl \
 	fzf \

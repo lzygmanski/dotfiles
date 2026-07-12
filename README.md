@@ -37,11 +37,11 @@ cd ~/dotfiles
 sh scripts/ubuntu.sh
 ```
 
-The installer uses `apt` for the server packages, installs the remaining shell
-tools in your home directory, installs NVM, Zinit and the tmux plugin manager,
-and links only the terminal-safe shared configuration. Warp and the macOS themes
-are not installed or linked on Ubuntu. Both x86-64 and ARM64 servers are
-supported.
+The installer uses `apt` for the server packages and native build toolchain,
+installs the remaining shell tools in your home directory, installs NVM, Zinit
+and the tmux plugin manager, and links only the terminal-safe shared
+configuration. Warp and the macOS themes are not installed or linked on Ubuntu.
+Both x86-64 and ARM64 servers are supported.
 
 Make Zsh the login shell, then reconnect over SSH:
 
