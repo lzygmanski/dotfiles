@@ -7,6 +7,7 @@ path_prepend_if_exists() {
 path_prepend_if_exists "$HOME/bin"
 path_prepend_if_exists "$HOME/.local/bin"
 path_prepend_if_exists "$HOME/.atuin/bin"
+# Ensure Homebrew itself can be discovered on both Apple Silicon and Intel macOS.
 path_prepend_if_exists "/opt/homebrew/bin"
 path_prepend_if_exists "/usr/local/bin"
 path_prepend_if_exists "$HOME/go/bin"
@@ -15,8 +16,12 @@ path_prepend_if_exists "$HOME/.luarocks/bin"
 case "$OSTYPE" in
   darwin*)
     if command -v brew >/dev/null 2>&1; then
-      BREW_PREFIX="$(brew --prefix)"
-      path_prepend_if_exists "$BREW_PREFIX/opt/python@3.12/libexec/bin"
+      # Faster than invoking `brew --prefix` on every shell startup.
+      BREW_BIN="$(command -v brew)"
+      BREW_PREFIX="${BREW_BIN:h:h}"
+      path_prepend_if_exists "$BREW_PREFIX/bin"
+      path_prepend_if_exists "$BREW_PREFIX/sbin"
+
       path_prepend_if_exists "$BREW_PREFIX/opt/ruby/bin"
 
       if [ -d "$BREW_PREFIX/opt/gradle/libexec" ]; then
@@ -51,6 +56,8 @@ export AWS_PAGER=""
 
 alias vim="nvim"
 alias vi="command vim"
+alias python="python3"
+alias pip="pip3"
 
 setopt auto_cd
 setopt auto_pushd
@@ -100,8 +107,8 @@ if command -v atuin >/dev/null 2>&1; then
 fi
 
 if command -v fzf >/dev/null 2>&1; then
-  if fzf --help 2>&1 | grep -q -- '--zsh'; then
-    source <(fzf --zsh)
+  if fzf_zsh_init="$(fzf --zsh 2>/dev/null)"; then
+    source =(print -r -- "$fzf_zsh_init")
   else
     [ -r /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
     [ -r /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
