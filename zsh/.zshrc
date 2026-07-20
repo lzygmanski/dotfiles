@@ -115,3 +115,7 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+
+# Load machine-specific overrides (not tracked in repo)
+LOCAL_ZSHRC="${ZDOTDIR:-$HOME}/.zshrc.local"
+[ -r "$LOCAL_ZSHRC" ] && source "$LOCAL_ZSHRC"

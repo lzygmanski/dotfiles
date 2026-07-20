@@ -18,6 +18,8 @@ tags
 
 # zsh completion cache
 .zcompdump*
+.zshrc.local
+zsh/.zshrc.local
 
 # packages
 *.deb
