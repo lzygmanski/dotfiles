@@ -15,7 +15,7 @@ Install the tools and link the dotfiles:
 sh scripts/macos.sh
 ```
 
-If existing `.gitconfig`, `.tmux.conf`, `.zshrc`, or Warp settings files are found, they are backed up to:
+If existing `.gitconfig`, `.tmux.conf`, or `.zshrc` files are found, they are backed up to:
 
 ```sh
 ~/.dotfiles-backup/
@@ -40,7 +40,7 @@ sh scripts/ubuntu.sh
 The installer uses `apt` for the server packages and native build toolchain,
 installs the remaining shell tools in your home directory, installs NVM, Zinit
 and the tmux plugin manager, and links only the terminal-safe shared
-configuration. Warp and the macOS themes are not installed or linked on Ubuntu.
+configuration. The macOS themes are not installed or linked on Ubuntu.
 Both x86-64 and ARM64 servers are supported.
 
 Make Zsh the login shell, then reconnect over SSH:
@@ -58,7 +58,6 @@ defaults during setup.
 Check the new shell tools:
 
 ```sh
-warp --version
 tmux -V
 starship --version
 zoxide --version
@@ -99,7 +98,6 @@ This setup keeps Zsh but does not use Oh My Zsh. The shell stack is:
 - [Atuin](https://atuin.sh/) for shell history
 - [fzf](https://github.com/junegunn/fzf) for fuzzy finding
 - [lazygit](https://github.com/jesseduffield/lazygit) for terminal Git UI
-- [Warp](https://www.warp.dev/) for the terminal app
 
 ## Tool examples
 
@@ -201,19 +199,3 @@ prefix + I
 ```
 
 The default prefix is `Ctrl-b`.
-
-### Warp
-
-Warp settings are linked to:
-
-```sh
-~/.warp/settings.toml
-```
-
-The custom theme is linked to:
-
-```sh
-~/.warp/themes/dotfiles-dracula.yaml
-```
-
-The setup uses a Dracula-style theme with window opacity and blur enabled. Restart Warp after linking if the theme does not appear immediately.
