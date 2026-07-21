@@ -24,3 +24,13 @@ SAVEHIST=100000
 
 bindkey -v
 export KEYTIMEOUT=1
+
+autosuggest-accept-or-complete() {
+  if [[ -n "$POSTDISPLAY" ]]; then
+    zle autosuggest-accept
+  else
+    zle expand-or-complete
+  fi
+}
+zle -N autosuggest-accept-or-complete
+bindkey -M viins '^I' autosuggest-accept-or-complete

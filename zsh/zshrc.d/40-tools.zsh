@@ -22,3 +22,6 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+
+# fzf's key-bindings script rebinds Tab; reassert autosuggestion-aware Tab after it loads.
+bindkey -M viins '^I' autosuggest-accept-or-complete
