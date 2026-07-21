@@ -14,6 +14,7 @@ font_size = 15.0
 override_opacity = 47
 override_blur = 18
 override_blur_texture = true
+zoom_level = 100
 
 [appearance.vertical_tabs]
 enabled = false
